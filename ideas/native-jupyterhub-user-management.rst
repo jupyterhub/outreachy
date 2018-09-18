@@ -15,7 +15,7 @@ should let users sign up, be approved by an administrator & then login
 with a username / password.
 
 A user management system that is native to JupyterHub, implemented
-as an authenticator, would solve this need. 
+as an authenticator, would solve this need.
 
 This JupyterHub native user management system should support the following
 workflows:
@@ -37,7 +37,7 @@ How can applicants make a contribution to the project?
 ======================================================
 
 The project requires familiarity with asynchronous programming in Python,
-using the `Tornado web framework <http://www.tornadoweb.org/en/stable/>`_. 
+using the `Tornado web framework <http://www.tornadoweb.org/en/stable/>`_.
 "`Structure of a Tornado web application <http://www.tornadoweb.org/en/stable/guide/structure.html>`_"
 is a good place to start.
 
@@ -67,9 +67,9 @@ Community Benefits
 
 JupyterHub's current authentication mechanisms require you to either:
 
-1. Trust a third party (Google, Auth0, etc) running a proprietary service 
+1. Trust a third party (Google, Auth0, etc) running a proprietary service
 2. Manage user accounts by hand in the ol' school Linux way (not possible in all
-   deployments) 
+   deployments)
 3. Set up & run your own external authentication service
 
 For cases where you have a small number of users & not much technical budget,

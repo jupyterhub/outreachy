@@ -22,7 +22,7 @@ This GitHub repository contains:
 Project Ideas
 =============
 
-- :ref:ideas/native-jupyterhub-user-management.rst
+- `JupyterHub native user management <ideas/native-jupyterhub-user-management.rst>`_.
 
 Code of Conduct
 ===============
