@@ -25,6 +25,7 @@ workflows:
 3. Password can be reset by user or admin.
 
 It should also implement at least some of the following anti-abuse features:
+
 1. Throttling of login attempts
 2. Temporarily / permanently deactivating a user account
 3. Password strength meter on signup
