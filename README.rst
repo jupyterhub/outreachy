@@ -26,6 +26,7 @@ To add a new project idea, copy `the idea template <ideas/template.rst>`_
 to a new file under ``ideas/``, and make a pull request.
 
 - `JupyterHub native user management <ideas/native-jupyterhub-user-management.rst>`_.
+- `Highly available JupyterHub proxy with traefik <ideas/traefik-jupyterhub-proxy.rst>`_.
 
 Code of Conduct
 ===============

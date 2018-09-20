@@ -48,6 +48,9 @@ lists the various microtasks that are specific to this project. You should
 complete at least one of them. Comment on the issue, or reach out to us at
 https://gitter.im/jupyterhub/jupyterhub for help!
 
+Remember that we do not expect you to already have **all** the skills required
+to complete the tasks. Ask and we shall help!
+
 Intern Benefits
 ===============
 
