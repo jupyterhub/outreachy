@@ -41,7 +41,7 @@ How can applicants make a contribution to the project?
 ======================================================
 
 We require students finish at least one project-specific microtask before
-they apply. https://github.com/jupyterhub/outreachy/labels/project-treafik-proxy
+they apply. https://github.com/jupyterhub/outreachy/labels/project-traefik-proxy
 lists the various microtasks that are specific to this project. You should
 complete at least one of them. Comment on the issue, or reach out to us at
 https://gitter.im/jupyterhub/jupyterhub for help!
