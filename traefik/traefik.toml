@@ -4,12 +4,12 @@ debug = true
 logLevel = "DEBUG"
 
 [api]
-	entrypoint = "http"
-	address = ":8080"
+        entrypoint = "http"
+        address = ":8080"
 
 [entryPoints]
-	[entryPoints.http]
-		address = ":80"
+        [entryPoints.http]
+                address = ":8000"
 
 [file]
 
