@@ -37,6 +37,17 @@ You will also integrate this proxy implementation into our high-scale
 `kubernetes <https://k8s.io>`_ distribution, `Zero to JupyterHub on
 Kubernetes <http://z2jh.jupyter.org>`_.
 
+Stretch goal
+------------
+
+Since ``configurable-http-proxy`` is written in nodejs, it requires admins
+to have nodejs installed before they can set up JupyterHub. This complicates
+setup, since you need to have two runtimes installed (nodejs & python3) than
+just one (python3). A stretch goal would be to make this situation better,
+by writing a proxy that runs in the same process as JupyterHub & does all
+the proxying required. This will make deploying JupyterHub much easier for
+smaller installs, make debugging easier and have a host of other benefits.
+
 How can applicants make a contribution to the project?
 ======================================================
 
