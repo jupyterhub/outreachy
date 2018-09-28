@@ -8,7 +8,6 @@ import requests
 
 from subprocess import Popen, PIPE
 from os.path import abspath, dirname, join
-from os import environ
 
 def traefikRoutesToCorrectBackend(path, expectedPort):
     baseUrl = "http://localhost:" + str(traefikUtils.getPort("traefik"))
