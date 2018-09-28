@@ -7,6 +7,8 @@ import pytest
 import requests
 
 from subprocess import Popen, PIPE
+from os.path import abspath, dirname, join
+from os import environ
 
 def traefikRoutesToCorrectBackend(path, expectedPort):
     baseUrl = "http://localhost:" + str(traefikUtils.getPort("traefik"))
@@ -23,13 +25,16 @@ def test_routing():
     firstBackendPort   = traefikUtils.getPort("firstBackend")
     secondBackendPort  = traefikUtils.getPort("secondBackend")
 
-    traefik        = Popen(["traefik", "-c traefik.toml"],
+    dummyServerPath = abspath(join(dirname(__file__), 'dummyHttpServer.py'))
+    configFilePath  = abspath(join(dirname(__file__), 'traefik.toml'))
+
+    traefik        = Popen(["traefik", "-c", configFilePath],
                             stdout=PIPE)
-    defaultBackend = Popen(["python", "dummyHttpServer.py",str(defaultBackendPort)],
+    defaultBackend = Popen(["python", dummyServerPath, str(defaultBackendPort)],
                             stdout=PIPE)
-    firstBackend   = Popen(["python", "dummyHttpServer.py", str(firstBackendPort)],
+    firstBackend   = Popen(["python", dummyServerPath, str(firstBackendPort)],
                             stdout=PIPE)
-    secondBackend  = Popen(["python", "dummyHttpServer.py", str(secondBackendPort)],
+    secondBackend  = Popen(["python", dummyServerPath, str(secondBackendPort)],
                             stdout=PIPE)
 
     try:

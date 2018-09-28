@@ -1,0 +1,15 @@
+language: python
+python:
+  - "3.6"
+sudo: required
+
+install:
+  - pip install pytest-travis-fold
+  - pip install requests
+  - wget https://github.com/containous/traefik/releases/download/v1.7.0/traefik_linux-amd64
+  - sudo chmod +x traefik_linux-amd64
+  - sudo ln -s -T `pwd`/traefik_linux-amd64 /usr/local/bin/traefik
+  - ls -l /usr/local/bin
+
+script:
+  - pytest ./traefik/test_traefikPrefixRouting.py -s
