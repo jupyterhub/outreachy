@@ -29,11 +29,11 @@ def test_routing():
 
     traefik        = Popen(["traefik", "-c", configFilePath],
                             stdout=PIPE)
-    defaultBackend = Popen(["python", dummyServerPath, str(defaultBackendPort)],
+    defaultBackend = Popen([sys.executable, dummyServerPath, str(defaultBackendPort)],
                             stdout=PIPE)
-    firstBackend   = Popen(["python", dummyServerPath, str(firstBackendPort)],
+    firstBackend   = Popen([sys.executable, dummyServerPath, str(firstBackendPort)],
                             stdout=PIPE)
-    secondBackend  = Popen(["python", dummyServerPath, str(secondBackendPort)],
+    secondBackend  = Popen([sys.executable, dummyServerPath, str(secondBackendPort)],
                             stdout=PIPE)
 
     try:
