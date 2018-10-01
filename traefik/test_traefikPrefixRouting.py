@@ -3,6 +3,7 @@ Test
 """
 import traefikUtils
 
+import sys
 import pytest
 import requests
 
