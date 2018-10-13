@@ -88,8 +88,7 @@ def check_backends_up():
 
 
 def check_traefik_up():
-    """ Verify if traefik started listening on their designated
-    ports """
+    """ Verify if traefik started listening on its designated port """
     traefik_port = get_port("traefik")
     assert check_host_up("localhost", traefik_port) == True
 
@@ -98,7 +97,7 @@ def launch_backends():
     default_backend_port, first_backend_port, second_backend_port = (
         get_backend_ports()
     )
-    dummy_server_path = abspath(join(dirname(__file__), "dummyHttpServer.py"))
+    dummy_server_path = abspath(join(dirname(__file__), "dummy_http_server.py"))
 
     default_backend = Popen(
         [sys.executable, dummy_server_path, str(default_backend_port)],
