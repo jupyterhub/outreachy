@@ -1,61 +1,48 @@
 """
 Test
 """
-import traefikUtils
-
+import traefik_utils
 import pytest
-from os.path import abspath, dirname, join
-from subprocess import Popen, PIPE
 
-def test_routing():
-    traefikPort     = traefikUtils.getPort("traefik")
-    configFilePath  = abspath(join(dirname(__file__), 'traefik.toml'))
-    traefik         = Popen(["traefik", "-c", configFilePath],
-                            stdout=PIPE)
-    defaultBackend, firstBackend, secondBackend = traefikUtils.launchBackends()
 
+def wait_procs(default_backend, first_backend, second_backend, traefik):
+    default_backend.wait()
+    first_backend.wait()
+    second_backend.wait()
+    traefik.wait()
+
+
+def kill_procs(default_backend, first_backend, second_backend, traefik):
+    default_backend.kill()
+    first_backend.kill()
+    second_backend.kill()
+    traefik.kill()
+
+
+def test_toml_routing():
+    traefik = traefik_utils.launch_traefik_with_toml()
+    default_backend, first_backend, second_backend = (
+        traefik_utils.launch_backends()
+    )
     try:
-        """
-            Before sending HTTP requests to traefik (and to the backends)
-            we need to make sure the services are up and ready
-        """
-        assert traefikUtils.checkHostUp("localhost", traefikPort) == True
-        traefikUtils.checkBackendsReady()
-        traefikUtils.checkRouting()
-
+        traefik_utils.check_traefik_up()
+        traefik_utils.check_backends_up()
+        traefik_utils.check_routing()
     finally:
-        defaultBackend.kill()
-        firstBackend.kill()
-        secondBackend.kill()
-        traefik.kill()
+        kill_procs(default_backend, first_backend, second_backend, traefik)
+        wait_procs(default_backend, first_backend, second_backend, traefik)
 
-        defaultBackend.wait()
-        firstBackend.wait()
-        secondBackend.wait()
-        traefik.wait()
 
 def test_etcd_routing():
-    traefikPort = traefikUtils.getPort("traefik")
-    traefik        = Popen(["traefik", "--etcd", "--etcd.useapiv3=true"], stdout=None)
-
-    defaultBackend, firstBackend, secondBackend = traefikUtils.launchBackends()
-
+    traefik = traefik_utils.launch_traefik_with_etcd()
+    default_backend, first_backend, second_backend = (
+        traefik_utils.launch_backends()
+    )
     try:
-        """
-            Before sending HTTP requests to traefik (and to the backends)
-            we need to make sure the services are up and ready
-        """
-        assert traefikUtils.checkHostUp("localhost", traefikPort) == True
-        traefikUtils.checkBackendsReady()
-        traefikUtils.checkTraefikReady()
-        traefikUtils.checkRouting()
+        traefik_utils.check_traefik_up()
+        traefik_utils.check_backends_up()
+        traefik_utils.check_traefik_etcd_conf_ready()
+        traefik_utils.check_routing()
     finally:
-        defaultBackend.kill()
-        firstBackend.kill()
-        secondBackend.kill()
-        traefik.kill()
-
-        defaultBackend.wait()
-        firstBackend.wait()
-        secondBackend.wait()
-        traefik.wait()
+        kill_procs(default_backend, first_backend, second_backend, traefik)
+        wait_procs(default_backend, first_backend, second_backend, traefik)
