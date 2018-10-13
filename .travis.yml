@@ -2,7 +2,8 @@ language: python
 python:
   - "3.6"
 sudo: required
-
+env:
+  - ETCDCTL_API=3
 install:
   - pip install pytest-travis-fold
   - pip install requests
