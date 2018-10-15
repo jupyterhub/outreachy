@@ -2,6 +2,7 @@ import time
 import socket
 import sys
 import requests
+import etcd3
 from os.path import abspath, dirname, join
 from subprocess import Popen
 
@@ -32,11 +33,11 @@ def is_open(ip, port):
 
 
 def check_host_up(ip, port):
-    """ Allow the service up to 1 sec to open connection on the
+    """ Allow the service up to 2 sec to open connection on the
     designated port """
     up = False
     retry = 20  # iterations
-    delay = 0.05  # 50 ms
+    delay = 0.1  # 100 ms
 
     for i in range(retry):
         if is_open(ip, port):
@@ -57,16 +58,19 @@ def traefik_routes_to_correct_backend(path, expected_port):
 
 def check_traefik_etcd_conf_ready():
     base_url = "http://localhost:" + str(get_port("traefik"))
-    """ Allow traefik up to 3 sec to load its configuration from the
+    """ Allow traefik up to 10 sec to load its configuration from the
     etcd cluster """
-    timeout = time.time() + 3
+    timeout = time.time() + 10
     ready = False
-    while ready is False:
+    t = 0.1
+    while not ready and time.time() < timeout:
         resp = requests.get(base_url + "/api/providers/etcdv3")
         ready = resp.status_code == 200
-        assert time.time() < timeout
+        if not ready:
+            t = min(2, t * 2)
+            time.sleep(t)
 
-    assert ready == True
+    assert ready  # Check that we got here because we are ready
 
 
 def get_backend_ports():
@@ -147,3 +151,68 @@ def check_routing():
 
 def generate_traefik_toml():
     pass  # Not implemented
+
+def create_etcd_config():
+    etcd = etcd3.client(host='127.0.0.1', port=2379)
+
+    etcd.put('/traefik/accesslogsfile', '')
+    etcd.put('/traefik/allowminweightzero', 'false')
+    etcd.put('/traefik/api/', '')
+    etcd.put('/traefik/api/dashboard', 'true')
+    etcd.put('/traefik/api/debug','false')
+    etcd.put('/traefik/api/entrypoint', 'http')
+    etcd.put('/traefik/backends/defaultbackend/', '')
+    etcd.put('/traefik/backends/defaultbackend/servers/server1/url', 'http://127.0.0.1:9000')
+    etcd.put('/traefik/backends/defaultbackend/servers/server1/weight', '1')
+    etcd.put('/traefik/backends/userfirstbackend/', '')
+    etcd.put('/traefik/backends/userfirstbackend/servers/server1/url', 'http://127.0.0.1:9090')
+    etcd.put('/traefik/backends/userfirstbackend/servers/server1/weight', '1')
+    etcd.put('/traefik/backends/usersecondbackend/servers/server1/url', 'http://127.0.0.1:9099')
+    etcd.put('/traefik/backends/usersecondbackend/servers/server1/weight', '1')
+    etcd.put('/traefik/checknewversion', 'true')
+    etcd.put('/traefik/debug', 'true')
+    etcd.put('/traefik/defaultentrypoints/0', 'http')
+    etcd.put('/traefik/entrypoints/http/', '')
+    etcd.put('/traefik/entrypoints/http/address', ':8000')
+    etcd.put('/traefik/entrypoints/http/compress', 'false')
+    etcd.put('/traefik/etcd/', '')
+    etcd.put('/traefik/etcd/debugloggeneratedtemplate', 'false')
+    etcd.put('/traefik/etcd/endpoint', '127.0.0.1:2379')
+    etcd.put('/traefik/etcd/filename', '')
+    etcd.put('/traefik/etcd/password', '')
+    etcd.put('/traefik/etcd/prefix', '/traefik')
+    etcd.put('/traefik/etcd/templateversion', '0')
+    etcd.put('/traefik/etcd/trace', 'false')
+    etcd.put('/traefik/etcd/useapiv3', 'true')
+    etcd.put('/traefik/etcd/username', '')
+    etcd.put('/traefik/etcd/watch', 'true')
+    etcd.put('/traefik/frontends/default/', '')
+    etcd.put('/traefik/frontends/default/backend', 'defaultbackend')
+    etcd.put('/traefik/frontends/default/passhostheader', 'false')
+    etcd.put('/traefik/frontends/default/passtlscert', 'false')
+    etcd.put('/traefik/frontends/default/priority', '0')
+    etcd.put('/traefik/frontends/default/routes/test_1/rule', 'PathPrefix:/')
+    etcd.put('/traefik/frontends/userfirst/', '')
+    etcd.put('/traefik/frontends/userfirst/backend', 'userfirstbackend')
+    etcd.put('/traefik/frontends/userfirst/passhostheader', 'false')
+    etcd.put('/traefik/frontends/userfirst/passtlscert', 'false')
+    etcd.put('/traefik/frontends/userfirst/priority', '0')
+    etcd.put('/traefik/frontends/userfirst/routes/test/rule', 'PathPrefix:/user/first')
+    etcd.put('/traefik/frontends/usersecond/', '')
+    etcd.put('/traefik/frontends/usersecond/backend', 'usersecondbackend')
+    etcd.put('/traefik/frontends/usersecond/passhostheader', 'false')
+    etcd.put('/traefik/frontends/usersecond/passtlscert', 'false')
+    etcd.put('/traefik/frontends/usersecond/priority', '0')
+    etcd.put('/traefik/frontends/usersecond/routes/test/rule', 'PathPrefix:/user/second')
+    etcd.put('/traefik/gracetimeout', '0')
+    etcd.put('/traefik/healthcheck/', '')
+    etcd.put('/traefik/healthcheck/interval', '30000000000')
+    etcd.put('/traefik/idletimeout', '0')
+    etcd.put('/traefik/insecureskipverify', 'false')
+    etcd.put('/traefik/lifecycle/gracetimeout', '10000000000')
+    etcd.put('/traefik/lifecycle/requestacceptgracetimeout', '0')
+    etcd.put('/traefik/loglevel', 'DEBUG')
+    etcd.put('/traefik/maxidleconnsperhost', '200')
+    etcd.put('/traefik/providersthrottleduration', '2000000000')
+    etcd.put('/traefik/sendanonymoususage', 'false')
+    etcd.put('/traefik/traefiklogsfile', '')

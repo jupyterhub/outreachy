@@ -34,6 +34,7 @@ def test_toml_routing():
 
 
 def test_etcd_routing():
+    traefik_utils.create_etcd_config()
     traefik = traefik_utils.launch_traefik_with_etcd()
     default_backend, first_backend, second_backend = (
         traefik_utils.launch_backends()

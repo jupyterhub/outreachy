@@ -14,6 +14,5 @@ install:
   - wget https://github.com/etcd-io/etcd/releases/download/v3.3.10/etcd-v3.3.10-linux-amd64.tar.gz
   - tar xzvf etcd-v3.3.10-linux-amd64.tar.gz
   - ./etcd-v3.3.10-linux-amd64/etcd &
-  - traefik storeconfig -c ./traefik/traefik.toml --etcd --etcd.endpoint=127.0.0.1:2379 --etcd.useapiv3=true
 script:
   - pytest ./traefik/test_traefikPrefixRouting.py -s
