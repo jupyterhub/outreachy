@@ -11,15 +11,15 @@ class DummyServer(BaseHTTPRequestHandler):
         self.wfile.write(bytes(str(self.server.server_port), "utf-8"))
         
 def run(port = 80):
-    dummyServer = HTTPServer(("localhost", port), DummyServer)
+    dummy_server = HTTPServer(("localhost", port), DummyServer)
     print('Starting dummy server...')
 
     try:
-        dummyServer.serve_forever()
+        dummy_server.serve_forever()
     except KeyboardInterrupt:
         pass
 
-    dummyServer.server_close()
+    dummy_server.server_close()
 
 if __name__ == "__main__":
     from sys import argv
