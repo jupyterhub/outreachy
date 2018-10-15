@@ -7,6 +7,7 @@ env:
 install:
   - pip install pytest-travis-fold
   - pip install requests
+  - pip install etcd3
   - wget https://github.com/containous/traefik/releases/download/v1.7.0/traefik_linux-amd64
   - sudo chmod +x traefik_linux-amd64
   - sudo ln -s -T `pwd`/traefik_linux-amd64 /usr/local/bin/traefik
