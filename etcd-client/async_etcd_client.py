@@ -2,10 +2,11 @@ import aio_etcd as etcd
 import asyncio
 import sys
 
+
 class AsyncEtcdClient:
     def __init__(self, host, port):
         self.host = host
-        self.port =port
+        self.port = port
 
     async def get(self, key, prefix=False):
         client = etcd.Client(self.host, self.port)
@@ -18,8 +19,7 @@ class AsyncEtcdClient:
             resp = await client.read(key)
             print("%s: %s" % (key, resp.value))
         except etcd.EtcdKeyNotFound:
-            print("Key \"%s\" not found" % key)
-
+            print('Key "%s" not found' % key)
 
     async def set(self, key, value, swap=False, oldvalue=""):
         client = etcd.Client(self.host, self.port)
@@ -30,37 +30,36 @@ class AsyncEtcdClient:
                 return
             await client.write(key, value, prevExist=False)
         except etcd.EtcdKeyNotFound:
-            print("Key \"%s\" not found" % key)
+            print('Key "%s" not found' % key)
         except etcd.EtcdAlreadyExist:
-            print("Key \"%s\" already exists. Use --swap to change its value" % key)
+            print(
+                'Key "%s" already exists. Use --swap to change its value' % key
+            )
 
     async def mkdir(self, directory):
         client = etcd.Client(self.host, self.port)
         try:
             await client.write(directory, None, dir=True)
         except etcd.EtcdNotFile:
-            print("Directory \"%s\" already exists" % directory)
-
+            print('Directory "%s" already exists' % directory)
 
     async def ls(self, directory):
         client = etcd.Client(self.host, self.port)
         try:
             r = await client.read(directory, recursive=True, sorted=True)
             for child in r.children:
-                print("%s: %s" % (child.key,child.value))
+                print("%s: %s" % (child.key, child.value))
         except etcd.EtcdKeyNotFound:
-            print("Dir \"%s\" not found" % directory)
+            print('Dir "%s" not found' % directory)
         except etcd.EtcdNotDir:
-            print("\"%s\" is not a directory" % directory)
-
+            print('"%s" is not a directory' % directory)
 
     async def rm(self, key):
         client = etcd.Client(self.host, self.port)
         try:
             await client.delete(key, recursive=True)
         except etcd.EtcdKeyNotFound:
-            print("Key \"%s\" not found" % key)
-
+            print('Key "%s" not found' % key)
 
     def action_switcher(self, action, params):
         method = getattr(self, action, lambda: "Invalid month")
@@ -70,4 +69,3 @@ class AsyncEtcdClient:
             return loop.run_until_complete(method(param))
 
         return loop.run_until_complete(method(*params))
-
