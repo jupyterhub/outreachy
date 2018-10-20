@@ -4,68 +4,216 @@ import sys
 
 
 class AsyncEtcdClient:
+    """
+    A class used to represent simple async etcd commandline client
+
+    ...
+
+    Attributes
+    ----------
+    host : str
+        the address of etcd
+    port : int
+        the port of etcd accepting client connections
+
+    Methods
+    -------
+    get(key, prefix=False)
+        Returns the value stored in etcd associated with a key or a
+        list of key-value pairs stored in etcd associated with keys
+        starting with a given prefix
+    set(key, value, swap=False, oldvalue="")
+        Sets a new key-value pair in etcd and returns the value or
+        replaces a value associated with a key with a new one and
+        returns the new value
+    mkdir(directory)
+        Creates a new directory in etcd
+    ls(directory)
+        Returns a list containing all the key-value pairs stored inside
+        a given directory
+    rm(key)
+        Removes a key or a directory from etcd
+    command_selector(command, params)
+        Runs the given command with the given parameters
+    """
+
     def __init__(self, host, port):
+        """
+        Parameters
+        ----------
+        host : str
+            The address of etcd
+        port : int
+            The port of etcd accepting client connections
+        """
         self.host = host
         self.port = port
 
     async def get(self, key, prefix=False):
+        """Returns the value stored in etcd associated with a key or a
+        list of key-value pairs stored in etcd associated with keys
+        starting with a given prefix.
+
+        If the argument `prefix` isn't passed in, it won't treat the
+        key as a prefix.
+
+        Parameters
+        ----------
+        key : str
+            The key to search for or the prefix if prefix is True
+        prefix : bool, optional
+            Whether or not treat the given key as prefix and search for
+            all the keys starting with that prefix (default is None)
+
+        Raises
+        ------
+        etcd.EtcdKeyNotFound
+            If the key isn't found in etcd
+        """
         client = etcd.Client(self.host, self.port)
         try:
             if prefix:
-                resp = await client.read(key, recursive=True)
+                rv = []
+                resp = await client.read(key, recursive=True, sorted=True)
                 for child in resp.children:
-                    print("%s: %s" % (child.key, child.value))
-                return
+                    rv.append("%s: %s" % (child.key, child.value))
+                return rv
             resp = await client.read(key)
-            print("%s: %s" % (key, resp.value))
-        except etcd.EtcdKeyNotFound:
-            print('Key "%s" not found' % key)
+            return resp.value
+        except etcd.EtcdKeyNotFound as e:
+            client.close()
+            raise e
 
     async def set(self, key, value, swap=False, oldvalue=""):
+        """Sets a new key-value pair in etcd and returns the value or
+        replaces a value associated with a key with a new one and
+        returns the new value.
+
+        If the argument `swap` isn't passed in, it won't try to replace
+        the value of the given key.
+
+        Parameters
+        ----------
+        key : str
+            The key to be added in etcd
+        value : str
+            The value of the new key
+        swap : bool, optional
+            Whether or not to swap `value` and `oldvalue` associated
+            with the given key (default is None)
+        oldvalue : str, optional
+            The value associated with the given key meant to be
+            replaced (default is "")
+
+        Raises
+        ------
+        etcd.EtcdAlreadyExist
+            If the key already exists in etcd and `swap` is False
+        etcd.EtcdCompareFailed
+            If `oldvalue` is not the value stored in etcd for the given
+            key
+        """
         client = etcd.Client(self.host, self.port)
         try:
             if swap:
-                print("Swapping {} with {}".format(oldvalue, value))
                 await client.write(key, value, prevValue=oldvalue)
-                return
+                return value
             await client.write(key, value, prevExist=False)
-        except etcd.EtcdKeyNotFound:
-            print('Key "%s" not found' % key)
-        except etcd.EtcdAlreadyExist:
-            print(
-                'Key "%s" already exists. Use --swap to change its value' % key
-            )
+            return value
+        except etcd.EtcdAlreadyExist as e:
+            client.close()
+            raise e
+        except etcd.EtcdCompareFailed as e:
+            client.close()
+            raise e
 
     async def mkdir(self, directory):
+        """Creates a new directory in etcd.
+
+        Parameters
+        ----------
+        directory : str
+            The name of the directory to be added in etcd
+
+        Raises
+        ------
+        etcd.EtcdNotFile
+            If directory already exists in etcd
+        """
         client = etcd.Client(self.host, self.port)
         try:
             await client.write(directory, None, dir=True)
-        except etcd.EtcdNotFile:
-            print('Directory "%s" already exists' % directory)
+        except etcd.EtcdNotFile as e:
+            client.close()
+            raise e
 
     async def ls(self, directory):
+        """Returns a list containing all the key-value pairs stored
+        inside a given directory.
+
+        Parameters
+        ----------
+        directory : str
+            The directory to retrieve
+
+        Raises
+        ------
+        etcd.EtcdKeyNotFound
+            If directory doesn't exist in etcd
+        """
         client = etcd.Client(self.host, self.port)
         try:
-            r = await client.read(directory, recursive=True, sorted=True)
-            for child in r.children:
-                print("%s: %s" % (child.key, child.value))
-        except etcd.EtcdKeyNotFound:
-            print('Dir "%s" not found' % directory)
-        except etcd.EtcdNotDir:
-            print('"%s" is not a directory' % directory)
+            rv = []
+            resp = await client.get(directory, recursive=True, sorted=True)
+            for child in resp.children:
+                rv.append("%s: %s" % (child.key, child.value))
+            return rv
+        except etcd.EtcdKeyNotFound as e:
+            client.close()
+            raise e
 
     async def rm(self, key):
+        """Removes a key or a directory from etcd.
+
+        Parameters
+        ----------
+        key : str
+            The key/directory to remove
+
+        Raises
+        ------
+        etcd.EtcdKeyNotFound
+            If key/directory don't exist in etcd
+        """
         client = etcd.Client(self.host, self.port)
         try:
             await client.delete(key, recursive=True)
-        except etcd.EtcdKeyNotFound:
-            print('Key "%s" not found' % key)
+        except etcd.EtcdKeyNotFound as e:
+            client.close()
+            raise e
 
-    def action_switcher(self, action, params):
-        method = getattr(self, action, lambda: "Invalid month")
+    def command_selector(self, command, params):
+        """Runs the given command with the given parameters and returns
+        its result.
+
+        Parameters
+        ----------
+        command : str
+            The command to be run
+        params : list<str>
+            The parameters of the given command
+        """
+        method = getattr(self, command, lambda: "Invalid command")
         loop = asyncio.get_event_loop()
         if len(params) == 1:
             param = params[0]
-            return loop.run_until_complete(method(param))
-
-        return loop.run_until_complete(method(*params))
+            try:
+                return loop.run_until_complete(method(param))
+            except BaseException as e:
+                print(e)
+                return
+        try:
+            return loop.run_until_complete(method(*params))
+        except BaseException as e:
+            print(e)
+            return
