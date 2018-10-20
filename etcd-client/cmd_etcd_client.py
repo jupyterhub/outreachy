@@ -4,7 +4,8 @@ from async_etcd_client import AsyncEtcdClient
 
 def main():
     parser = argparse.ArgumentParser(description="Description of your program")
-    subparsers = parser.add_subparsers(help="commands")
+    subparsers = parser.add_subparsers(help="commands", dest="command")
+    subparsers.required = True
 
     # Get command
     get_parser = subparsers.add_parser(
@@ -17,7 +18,6 @@ def main():
         help="Get all the KV pairs starting with a prefix",
     )
     get_parser.add_argument("key", action="store", help="Key to search for")
-    get_parser.set_defaults(which="get")
 
     # Set command
     set_parser = subparsers.add_parser("set", help="Set the value of a key")
@@ -35,7 +35,6 @@ def main():
         action="store",
         help="The previous value of the key",
     )
-    set_parser.set_defaults(which="set")
 
     # Mkdir command
     mkdir_parser = subparsers.add_parser(
@@ -44,25 +43,22 @@ def main():
     mkdir_parser.add_argument(
         "key", action="store", help="The directory you want to add"
     )
-    mkdir_parser.set_defaults(which="mkdir")
 
     # Ls command
     ls_parser = subparsers.add_parser("ls", help="List a directory")
     ls_parser.add_argument(
         "key", action="store", help="The directory you want to list"
     )
-    ls_parser.set_defaults(which="ls")
 
     # Rm command
     rm_parser = subparsers.add_parser("rm", help="Remove a key or a directory")
     rm_parser.add_argument(
         "key", action="store", help="The key or directory you want to remove"
     )
-    rm_parser.set_defaults(which="rm")
 
     args = parser.parse_args()
 
-    command = args.which
+    command = args.command
     params = [args.key]
 
     if command == "set":
@@ -73,7 +69,7 @@ def main():
         params.append(args.prefix)
 
     client = AsyncEtcdClient("127.0.0.1", 2379)
-    client.action_switcher(command, params)
+    print(client.command_selector(command, params))
 
 
 if __name__ == "__main__":
