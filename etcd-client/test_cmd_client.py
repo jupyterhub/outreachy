@@ -5,7 +5,7 @@ import subprocess
 
 cmd_client_path = abspath(join(dirname(__file__), "cmd_etcd_client.py"))
 etcdctl_path = abspath(
-    join(dirname(__file__), pardir, "etcd-v3.3.9-linux-amd64/etcdctl")
+    join(dirname(__file__), pardir, "etcd-v3.3.10-linux-amd64/etcdctl")
 )
 
 
