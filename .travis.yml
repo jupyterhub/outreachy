@@ -3,11 +3,13 @@ python:
   - "3.6"
 sudo: required
 env:
-  - ETCDCTL_API=3
+  - ETCDCTL_API=2
 install:
   - pip install pytest-travis-fold
   - pip install requests
   - pip install etcd3
+  - pip install asyncio
+  - pip install aio-etcd
   - wget https://github.com/containous/traefik/releases/download/v1.7.0/traefik_linux-amd64
   - sudo chmod +x traefik_linux-amd64
   - sudo ln -s -T `pwd`/traefik_linux-amd64 /usr/local/bin/traefik
@@ -16,4 +18,6 @@ install:
   - tar xzvf etcd-v3.3.10-linux-amd64.tar.gz
   - ./etcd-v3.3.10-linux-amd64/etcd &
 script:
-  - pytest ./traefik/test_traefikPrefixRouting.py -s
+  - pytest ./traefik/test_traefikPrefixRouting.py
+  - pytest ./etcd-client/test_async_client.py
+  - pytest ./etcd-client/test_cmd_client.py

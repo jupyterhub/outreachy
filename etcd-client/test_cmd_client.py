@@ -1,30 +1,28 @@
 import pytest
 import sys
 from os.path import abspath, dirname, join
-from subprocess import Popen
-from subprocess import check_output
-from subprocess import CalledProcessError
+import subprocess
 
 cmd_client_path = abspath(join(dirname(__file__), "cmd_etcd_client.py"))
 
 
 def cleanup(key):
-    Popen(["etcdctl", "rm", key], stdout=None, stderr=None)
+    subprocess.run(["etcdctl", "rm", key])
 
 
 def cleanup_dir(dirname):
-    Popen(["etcdctl", "rmdir", dirname], stdout=None, stderr=None)
+    subprocess.run(["etcdctl", "rmdir", dirname])
 
 
 def test_no_args():
     try:
         output = (
-            check_output([sys.executable, cmd_client_path])
+            subprocess.check_output([sys.executable, cmd_client_path])
             .decode(sys.stdout.encoding)
             .strip()
             != 0
         )
-    except CalledProcessError as err:
+    except subprocess.CalledProcessError as err:
         rc = err.returncode
     assert rc != 0
 
@@ -33,12 +31,12 @@ def test_invalid_command():
     command = "invalid"
     try:
         output = (
-            check_output([sys.executable, cmd_client_path, command])
+            subprocess.check_output([sys.executable, cmd_client_path, command])
             .decode(sys.stdout.encoding)
             .strip()
             != 0
         )
-    except CalledProcessError as err:
+    except subprocess.CalledProcessError as err:
         rc = err.returncode
     assert rc != 0
 
@@ -47,12 +45,12 @@ def test_no_args_for_get():
     command = "get"
     try:
         output = (
-            check_output([sys.executable, cmd_client_path, command])
+            subprocess.check_output([sys.executable, cmd_client_path, command])
             .decode(sys.stdout.encoding)
             .strip()
             != 0
         )
-    except CalledProcessError as err:
+    except subprocess.CalledProcessError as err:
         rc = err.returncode
     assert rc != 0
 
@@ -61,12 +59,12 @@ def test_no_args_for_set():
     command = "set"
     try:
         output = (
-            check_output([sys.executable, cmd_client_path, command])
+            subprocess.check_output([sys.executable, cmd_client_path, command])
             .decode(sys.stdout.encoding)
             .strip()
             != 0
         )
-    except CalledProcessError as err:
+    except subprocess.CalledProcessError as err:
         rc = err.returncode
     assert rc != 0
 
@@ -75,12 +73,12 @@ def test_no_args_for_mkdir():
     command = "mkdir"
     try:
         output = (
-            check_output([sys.executable, cmd_client_path, command])
+            subprocess.check_output([sys.executable, cmd_client_path, command])
             .decode(sys.stdout.encoding)
             .strip()
             != 0
         )
-    except CalledProcessError as err:
+    except subprocess.CalledProcessError as err:
         rc = err.returncode
     assert rc != 0
 
@@ -89,12 +87,12 @@ def test_no_args_for_ls():
     command = "ls"
     try:
         output = (
-            check_output([sys.executable, cmd_client_path, command])
+            subprocess.check_output([sys.executable, cmd_client_path, command])
             .decode(sys.stdout.encoding)
             .strip()
             != 0
         )
-    except CalledProcessError as err:
+    except subprocess.CalledProcessError as err:
         rc = err.returncode
     assert rc != 0
 
@@ -103,12 +101,12 @@ def test_no_args_for_rm():
     command = "rm"
     try:
         output = (
-            check_output([sys.executable, cmd_client_path, command])
+            subprocess.check_output([sys.executable, cmd_client_path, command])
             .decode(sys.stdout.encoding)
             .strip()
             != 0
         )
-    except CalledProcessError as err:
+    except subprocess.CalledProcessError as err:
         rc = err.returncode
     assert rc != 0
 
@@ -119,7 +117,9 @@ def test_get_key_not_found():
     expected_output = "Key not found : %s\nNone" % key
 
     assert (
-        check_output([sys.executable, cmd_client_path, command, key])
+        subprocess.check_output(
+            [sys.executable, cmd_client_path, command, key]
+        )
         .decode(sys.stdout.encoding)
         .strip()
         == expected_output
@@ -133,13 +133,15 @@ def test_get_existing_key():
 
     # First introduce the KV pair using etcdctl
     assert (
-        check_output(["etcdctl", "set", key, value])
+        subprocess.check_output(["etcdctl", "set", key, value])
         .decode(sys.stdout.encoding)
         .strip()
         == value
     )
     assert (
-        check_output([sys.executable, cmd_client_path, command, key])
+        subprocess.check_output(
+            [sys.executable, cmd_client_path, command, key]
+        )
         .decode(sys.stdout.encoding)
         .strip()
         == value
@@ -159,26 +161,26 @@ def test_get_prefix():
 
     # First introduce the KV pair using etcdctl
     assert (
-        check_output(["etcdctl", "set", keys[0], values[0]])
+        subprocess.check_output(["etcdctl", "set", keys[0], values[0]])
         .decode(sys.stdout.encoding)
         .strip()
         == values[0]
     )
     assert (
-        check_output(["etcdctl", "set", keys[1], values[1]])
+        subprocess.check_output(["etcdctl", "set", keys[1], values[1]])
         .decode(sys.stdout.encoding)
         .strip()
         == values[1]
     )
     assert (
-        check_output(["etcdctl", "set", keys[2], values[2]])
+        subprocess.check_output(["etcdctl", "set", keys[2], values[2]])
         .decode(sys.stdout.encoding)
         .strip()
         == values[2]
     )
 
     out = (
-        check_output(
+        subprocess.check_output(
             [sys.executable, cmd_client_path, command, "--prefix", prefix]
         )
         .decode(sys.stdout.encoding)
@@ -198,13 +200,15 @@ def test_set_existing_key():
     expected_output = "Key already exists : %s\nNone" % key
 
     assert (
-        check_output(["etcdctl", "set", key, value])
+        subprocess.check_output(["etcdctl", "set", key, value])
         .decode(sys.stdout.encoding)
         .strip()
         == value
     )
     assert (
-        check_output([sys.executable, cmd_client_path, command, key, value])
+        subprocess.check_output(
+            [sys.executable, cmd_client_path, command, key, value]
+        )
         .decode(sys.stdout.encoding)
         .strip()
         == expected_output
@@ -219,7 +223,9 @@ def test_set_new_key():
     value = "new"
 
     assert (
-        check_output([sys.executable, cmd_client_path, command, key, value])
+        subprocess.check_output(
+            [sys.executable, cmd_client_path, command, key, value]
+        )
         .decode(sys.stdout.encoding)
         .strip()
         == value
@@ -235,13 +241,13 @@ def test_set_swap_values():
     prev_value = "prev_value"
 
     assert (
-        check_output(["etcdctl", "set", key, prev_value])
+        subprocess.check_output(["etcdctl", "set", key, prev_value])
         .decode(sys.stdout.encoding)
         .strip()
         == prev_value
     )
     assert (
-        check_output(
+        subprocess.check_output(
             [
                 sys.executable,
                 cmd_client_path,
@@ -273,13 +279,13 @@ def test_set_swap_wrong_prev():
     )
 
     assert (
-        check_output(["etcdctl", "set", key, prev_value])
+        subprocess.check_output(["etcdctl", "set", key, prev_value])
         .decode(sys.stdout.encoding)
         .strip()
         == prev_value
     )
     assert (
-        check_output(
+        subprocess.check_output(
             [
                 sys.executable,
                 cmd_client_path,
@@ -305,7 +311,9 @@ def test_mkdir_new():
     expected_output = "None"
 
     assert (
-        check_output([sys.executable, cmd_client_path, command, dirname])
+        subprocess.check_output(
+            [sys.executable, cmd_client_path, command, dirname]
+        )
         .decode(sys.stdout.encoding)
         .strip()
         == expected_output
@@ -320,14 +328,16 @@ def test_mkdir_existing():
     expected_output = "Not a file : %s\nNone" % dirname
 
     assert (
-        check_output(["etcdctl", "mkdir", dirname])
+        subprocess.check_output(["etcdctl", "mkdir", dirname])
         .decode(sys.stdout.encoding)
         .strip()
         == ""
     )
 
     assert (
-        check_output([sys.executable, cmd_client_path, command, dirname])
+        subprocess.check_output(
+            [sys.executable, cmd_client_path, command, dirname]
+        )
         .decode(sys.stdout.encoding)
         .strip()
         == expected_output
@@ -346,7 +356,7 @@ def test_ls_existing_dir():
     ]
 
     assert (
-        check_output(["etcdctl", "mkdir", dirname])
+        subprocess.check_output(["etcdctl", "mkdir", dirname])
         .decode(sys.stdout.encoding)
         .strip()
         == ""
@@ -354,25 +364,25 @@ def test_ls_existing_dir():
 
     # First introduce the KV pair using etcdctl
     assert (
-        check_output(["etcdctl", "set", keys[0], values[0]])
+        subprocess.check_output(["etcdctl", "set", keys[0], values[0]])
         .decode(sys.stdout.encoding)
         .strip()
         == values[0]
     )
     assert (
-        check_output(["etcdctl", "set", keys[1], values[1]])
+        subprocess.check_output(["etcdctl", "set", keys[1], values[1]])
         .decode(sys.stdout.encoding)
         .strip()
         == values[1]
     )
     assert (
-        check_output(["etcdctl", "set", keys[2], values[2]])
+        subprocess.check_output(["etcdctl", "set", keys[2], values[2]])
         .decode(sys.stdout.encoding)
         .strip()
         == values[2]
     )
 
-    assert check_output(
+    assert subprocess.check_output(
         [sys.executable, cmd_client_path, command, dirname]
     ).decode(sys.stdout.encoding).strip() == str(expected_output)
 
@@ -387,7 +397,7 @@ def test_ls_non_existing_dir():
     dirname = "/nothing"
     expected_output = "Key not found : %s\nNone" % dirname
 
-    assert check_output(
+    assert subprocess.check_output(
         [sys.executable, cmd_client_path, command, dirname]
     ).decode(sys.stdout.encoding).strip() == str(expected_output)
 
@@ -397,7 +407,7 @@ def test_rm_non_existing_key():
     key = "/nothing"
     expected_output = "Key not found : %s\nNone" % key
 
-    assert check_output(
+    assert subprocess.check_output(
         [sys.executable, cmd_client_path, command, key]
     ).decode(sys.stdout.encoding).strip() == str(expected_output)
 
@@ -409,13 +419,15 @@ def test_rm_existing_key():
 
     # First introduce the KV pair using etcdctl
     assert (
-        check_output(["etcdctl", "set", key, value])
+        subprocess.check_output(["etcdctl", "set", key, value])
         .decode(sys.stdout.encoding)
         .strip()
         == value
     )
     assert (
-        check_output([sys.executable, cmd_client_path, command, key])
+        subprocess.check_output(
+            [sys.executable, cmd_client_path, command, key]
+        )
         .decode(sys.stdout.encoding)
         .strip()
         == "None"

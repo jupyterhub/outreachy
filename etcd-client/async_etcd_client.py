@@ -1,3 +1,10 @@
+"""Asynchronous etcd client
+
+This class allows the user to talk asynchronously with etcd and assumes
+there is an etcd cluster which can be reached through the host and port
+passed to the constructor.
+"""
+
 import aio_etcd as etcd
 import asyncio
 import sys
@@ -49,6 +56,9 @@ class AsyncEtcdClient:
         self.host = host
         self.port = port
 
+    def create_client(self):
+        return etcd.Client(self.host, self.port)
+
     async def get(self, key, prefix=False):
         """Returns the value stored in etcd associated with a key or a
         list of key-value pairs stored in etcd associated with keys
@@ -70,15 +80,18 @@ class AsyncEtcdClient:
         etcd.EtcdKeyNotFound
             If the key isn't found in etcd
         """
-        client = etcd.Client(self.host, self.port)
+        client = self.create_client()
         try:
             if prefix:
                 rv = []
                 resp = await client.read(key, recursive=True, sorted=True)
+                # print(resp.children)
                 for child in resp.children:
                     rv.append("%s: %s" % (child.key, child.value))
+                client.close()
                 return rv
             resp = await client.read(key)
+            client.close()
             return resp.value
         except etcd.EtcdKeyNotFound as e:
             client.close()
@@ -113,17 +126,18 @@ class AsyncEtcdClient:
             If `oldvalue` is not the value stored in etcd for the given
             key
         """
-        client = etcd.Client(self.host, self.port)
+        client = self.create_client()
         try:
             if swap:
-                await client.write(key, value, prevValue=oldvalue)
-                return value
-            await client.write(key, value, prevExist=False)
-            return value
-        except etcd.EtcdAlreadyExist as e:
+                resp = await client.write(
+                    key, value, prevExist=True, prevValue=oldvalue
+                )
+                client.close()
+                return resp.value
+            resp = await client.write(key, value, prevExist=False)
             client.close()
-            raise e
-        except etcd.EtcdCompareFailed as e:
+            return resp.value
+        except (etcd.EtcdAlreadyExist, etcd.EtcdCompareFailed) as e:
             client.close()
             raise e
 
@@ -140,9 +154,10 @@ class AsyncEtcdClient:
         etcd.EtcdNotFile
             If directory already exists in etcd
         """
-        client = etcd.Client(self.host, self.port)
+        client = self.create_client()
         try:
             await client.write(directory, None, dir=True)
+            client.close()
         except etcd.EtcdNotFile as e:
             client.close()
             raise e
@@ -161,12 +176,13 @@ class AsyncEtcdClient:
         etcd.EtcdKeyNotFound
             If directory doesn't exist in etcd
         """
-        client = etcd.Client(self.host, self.port)
+        client = self.create_client()
         try:
             rv = []
-            resp = await client.get(directory, recursive=True, sorted=True)
+            resp = await client.read(directory, recursive=True, sorted=True)
             for child in resp.children:
                 rv.append("%s: %s" % (child.key, child.value))
+            client.close()
             return rv
         except etcd.EtcdKeyNotFound as e:
             client.close()
@@ -185,9 +201,10 @@ class AsyncEtcdClient:
         etcd.EtcdKeyNotFound
             If key/directory don't exist in etcd
         """
-        client = etcd.Client(self.host, self.port)
+        client = self.create_client()
         try:
             await client.delete(key, recursive=True)
+            client.close()
         except etcd.EtcdKeyNotFound as e:
             client.close()
             raise e
@@ -203,7 +220,7 @@ class AsyncEtcdClient:
         params : list<str>
             The parameters of the given command
         """
-        method = getattr(self, command, lambda: "Invalid command")
+        method = getattr(self, command)
         loop = asyncio.get_event_loop()
         if len(params) == 1:
             param = params[0]

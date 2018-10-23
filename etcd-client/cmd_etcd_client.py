@@ -1,3 +1,20 @@
+"""Simple async etcd commandline client
+
+This script allows the user to interact with a running etcd instance
+that serves client requests on `127.0.0.1:2379`
+
+This tool accepts one of the following commands: {get,set,mkdir,ls,rm}
+and each of the commands expects some parameters.
+
+In order to print the parameters needed by a command run
+
+    * python cmd_etcd_client <command> -h
+
+To see all the available commands run
+
+    * python cmd_etcd_client -h
+"""
+
 import argparse
 from async_etcd_client import AsyncEtcdClient
 
