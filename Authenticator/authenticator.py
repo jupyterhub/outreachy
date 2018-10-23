@@ -14,10 +14,12 @@ class MyAuthenticator(Authenticator):
 
         if data['username'] not in csv_dict:
             self.logger.warning("No such user: %s", data['username'])
+            return None
         else:
 
             if csv_dict[name] != data['password']:
                 self.logger.warning("Incorrect password for user: %s", data['username'])
+                return None
                 
             else: 
                 self.logger.info("user: %s has logged in ", data['username'])
