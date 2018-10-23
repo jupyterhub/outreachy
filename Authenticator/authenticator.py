@@ -18,7 +18,7 @@ class MyAuthenticator(Authenticator):
         else:
 
             if csv_dict[name] != data['password']:
-                self.logger.Warnig("Incorrect password for user: %s", data['username'])
+                self.logger.warning("Incorrect password for user: %s", data['username'])
                 
             else: 
                 self.logger.info("user: %s has logged in ", data['username'])
