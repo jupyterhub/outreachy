@@ -1,17 +1,20 @@
 import pytest
 import sys
-from os.path import abspath, dirname, join
+from os.path import abspath, dirname, join, pardir
 import subprocess
 
 cmd_client_path = abspath(join(dirname(__file__), "cmd_etcd_client.py"))
+etcdctl_path = abspath(
+    join(dirname(__file__), pardir, "etcd-v3.3.9-linux-amd64/etcdctl")
+)
 
 
 def cleanup(key):
-    subprocess.run(["etcdctl", "rm", key])
+    subprocess.run([etcdctl_path, "rm", key])
 
 
 def cleanup_dir(dirname):
-    subprocess.run(["etcdctl", "rmdir", dirname])
+    subprocess.run([etcdctl_path, "rmdir", dirname])
 
 
 def test_no_args():
@@ -133,7 +136,7 @@ def test_get_existing_key():
 
     # First introduce the KV pair using etcdctl
     assert (
-        subprocess.check_output(["etcdctl", "set", key, value])
+        subprocess.check_output([etcdctl_path, "set", key, value])
         .decode(sys.stdout.encoding)
         .strip()
         == value
@@ -161,19 +164,19 @@ def test_get_prefix():
 
     # First introduce the KV pair using etcdctl
     assert (
-        subprocess.check_output(["etcdctl", "set", keys[0], values[0]])
+        subprocess.check_output([etcdctl_path, "set", keys[0], values[0]])
         .decode(sys.stdout.encoding)
         .strip()
         == values[0]
     )
     assert (
-        subprocess.check_output(["etcdctl", "set", keys[1], values[1]])
+        subprocess.check_output([etcdctl_path, "set", keys[1], values[1]])
         .decode(sys.stdout.encoding)
         .strip()
         == values[1]
     )
     assert (
-        subprocess.check_output(["etcdctl", "set", keys[2], values[2]])
+        subprocess.check_output([etcdctl_path, "set", keys[2], values[2]])
         .decode(sys.stdout.encoding)
         .strip()
         == values[2]
@@ -200,7 +203,7 @@ def test_set_existing_key():
     expected_output = "Key already exists : %s\nNone" % key
 
     assert (
-        subprocess.check_output(["etcdctl", "set", key, value])
+        subprocess.check_output([etcdctl_path, "set", key, value])
         .decode(sys.stdout.encoding)
         .strip()
         == value
@@ -241,7 +244,7 @@ def test_set_swap_values():
     prev_value = "prev_value"
 
     assert (
-        subprocess.check_output(["etcdctl", "set", key, prev_value])
+        subprocess.check_output([etcdctl_path, "set", key, prev_value])
         .decode(sys.stdout.encoding)
         .strip()
         == prev_value
@@ -279,7 +282,7 @@ def test_set_swap_wrong_prev():
     )
 
     assert (
-        subprocess.check_output(["etcdctl", "set", key, prev_value])
+        subprocess.check_output([etcdctl_path, "set", key, prev_value])
         .decode(sys.stdout.encoding)
         .strip()
         == prev_value
@@ -328,7 +331,7 @@ def test_mkdir_existing():
     expected_output = "Not a file : %s\nNone" % dirname
 
     assert (
-        subprocess.check_output(["etcdctl", "mkdir", dirname])
+        subprocess.check_output([etcdctl_path, "mkdir", dirname])
         .decode(sys.stdout.encoding)
         .strip()
         == ""
@@ -356,7 +359,7 @@ def test_ls_existing_dir():
     ]
 
     assert (
-        subprocess.check_output(["etcdctl", "mkdir", dirname])
+        subprocess.check_output([etcdctl_path, "mkdir", dirname])
         .decode(sys.stdout.encoding)
         .strip()
         == ""
@@ -364,19 +367,19 @@ def test_ls_existing_dir():
 
     # First introduce the KV pair using etcdctl
     assert (
-        subprocess.check_output(["etcdctl", "set", keys[0], values[0]])
+        subprocess.check_output([etcdctl_path, "set", keys[0], values[0]])
         .decode(sys.stdout.encoding)
         .strip()
         == values[0]
     )
     assert (
-        subprocess.check_output(["etcdctl", "set", keys[1], values[1]])
+        subprocess.check_output([etcdctl_path, "set", keys[1], values[1]])
         .decode(sys.stdout.encoding)
         .strip()
         == values[1]
     )
     assert (
-        subprocess.check_output(["etcdctl", "set", keys[2], values[2]])
+        subprocess.check_output([etcdctl_path, "set", keys[2], values[2]])
         .decode(sys.stdout.encoding)
         .strip()
         == values[2]
@@ -419,7 +422,7 @@ def test_rm_existing_key():
 
     # First introduce the KV pair using etcdctl
     assert (
-        subprocess.check_output(["etcdctl", "set", key, value])
+        subprocess.check_output([etcdctl_path, "set", key, value])
         .decode(sys.stdout.encoding)
         .strip()
         == value
