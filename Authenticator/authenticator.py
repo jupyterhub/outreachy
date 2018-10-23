@@ -1,7 +1,6 @@
 from jupyterhub.auth import Authenticator
 from tornado import gen
 import csv
-import logging
 
 
 class MyAuthenticator(Authenticator):
