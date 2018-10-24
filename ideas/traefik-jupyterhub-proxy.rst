@@ -94,12 +94,12 @@ Use this timeline as a starting point for this project in the application.
 Feel free to make adjustments as appropriate:
 
 - Month 1:
-  - Create a new `jupyterhub-traefik-proxy` package
-  - Initial implementation of Proxy API for traefik
-  - Common test suite for verifying uniform behavior of JupyterHub proxy implementations
+   - Create a new `jupyterhub-traefik-proxy` package
+   - Initial implementation of Proxy API for traefik
+   - Common test suite for verifying uniform behavior of JupyterHub proxy implementations
 - Month 2:
-  - Test deployments of jupyterhub using the new proxy
-  - Implementations of both local toml and etcd configurations
+   - Test deployments of jupyterhub using the new proxy
+   - Implementations of both local toml and etcd configurations
 - Month 3:
-  - Integrate traefik proxy implementation into zero-to-jupyterhub as the new default proxy
-  - Profiling of performance with traefik proxy
+   - Integrate traefik proxy implementation into zero-to-jupyterhub as the new default proxy
+   - Profiling of performance with traefik proxy
