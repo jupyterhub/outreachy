@@ -85,3 +85,21 @@ proxy would be a big step in that direction. In the long term, it reduces the to
 amount of code the community will have to maintain, and leverage improvements in
 the traefik / etcd communities easily. There will also be other performance &
 reliability improvements as a side effect of this change.
+
+
+Timeline
+========
+
+Use this timeline as a starting point for this project in the application.
+Feel free to make adjustments as appropriate:
+
+- Month 1:
+  - Create a new `jupyterhub-traefik-proxy` package
+  - Initial implementation of Proxy API for traefik
+  - Common test suite for verifying uniform behavior of JupyterHub proxy implementations
+- Month 2:
+  - Test deployments of jupyterhub using the new proxy
+  - Implementations of both local toml and etcd configurations
+- Month 3:
+  - Integrate traefik proxy implementation into zero-to-jupyterhub as the new default proxy
+  - Profiling of performance with traefik proxy
