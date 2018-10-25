@@ -34,6 +34,32 @@ Once done, this can be set up as the default authenticator for the JupyterHub
 distribution targetted at small scale use cases - `The Littlest JupyterHub
 <http://tljh.jupyter.org>`_.
 
+Stretch Goal
+------------
+
+Optionally, applicants may try to additional work as part of this project. This
+would be great, but not required for successful completion of internship.
+
+Some JupyterHub installations would like to use authentication provided by popular
+internet services - such as Twitter, Facebook, Reddit, Stackoverflow, etc. Instead
+of developing a new authenticator per service, it would be great to have one authenticator
+that can be used to connect to a large number of such services using an existing library.
+
+This use case can be served by writing a JupyterHub authenticator that integrates with the
+`Python Social Auth <https://python-social-auth-docs.readthedocs.io/en/latest/>`_ library.
+It provides integration with a `lot of websites <https://python-social-auth-docs.readthedocs.io/en/latest/backends/index.html#supported-backends>`_,
+allowing admins to specify which authentication provider they want to use. 
+
+This SocialAuthenticator would support:
+
+#. Allow admins to configure any of the supported `Python Social Auth bakends 
+   <https://python-social-auth-docs.readthedocs.io/en/latest/backends/index.html#supported-backends>`_
+   for JupyterHub.
+#. Integrate JupyterHub's user management with Python Social Auth's
+   user management, making sure users are created / deleted appropriately.
+#. Write documentation on configuring common authentication backends
+
+
 How can applicants make a contribution to the project?
 ======================================================
 
