@@ -1,7 +1,7 @@
 name: Accessibility task
 description: |
   Propose an accessibility improvement,
-  following WAVE report in https://github.com/jupyterhub/outreachy/issues/39.
+  following WAVE report in https://github.com/jupyterhub/outreachy/issues/38.
 
 title: "Accessibility: "
 labels:
@@ -24,7 +24,7 @@ body:
 
         - the URL of the page you are working on
         - the relevant accessibility report from WAVE
-          (or a link to your comment in #39)
+          (or a link to your comment in #38)
         - the HTML (or CSS) you propose to change
         - the HTML (or CSS) you propose to change it _to_
         - Any details/discussion if you have more systematic/structural changes
