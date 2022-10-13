@@ -14,7 +14,7 @@ body:
       value: >
         Thank you for improving accessibility of a Jupyter page!
 
-        If you're here, you have produced a WAVE accessibility report (as described in #39).
+        If you're here, you have produced a WAVE accessibility report (as described in https://github.com/jupyterhub/outreachy/issues/38).
         Now it's time to propose a _specific_ improvement to the HTML document,
         which should address one or more accessibility issues.
         please propose an _improvement_ to the HTML document
