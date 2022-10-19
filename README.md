@@ -1,7 +1,7 @@
 # Outreachy organization repo for JupyterHub
 
 This repository contains information about JupyterHub's
-participation in `Outreachy <https://www.outreachy.org/>`_ - a
+participation in [Outreachy](https://www.outreachy.org/) - a
 program that provides three-month internships for people from
 groups traditionally underrepresented in tech.
 
@@ -23,23 +23,32 @@ Make sure you have [`conda` installed](https://conda.io/projects/conda/en/latest
 We recommend using [`miniconda`](https://docs.conda.io/en/latest/miniconda.html).
 
 1. Create a new `conda` environment called `outreachy` that is running Python v3.10
+
    ```bash
    conda create -n outreachy python=3.10
    ```
+
 2. Activate the new environment
+
    ```bash
    conda activate outreachy
    ```
+
 3. Change into the `docs` folder and install the requirements
+
    ```bash
    cd docs
    pip install -r requirements.txt
    ```
+
 4. Build the HTML (still within the `docs` folder)
+
    ```bash
    make html
    ```
+
 5. Open the HTML file in your browser
+
    ```bash
    open build/html/index.html
    ```
