@@ -50,7 +50,7 @@ We recommend using [`miniconda`](https://docs.conda.io/en/latest/miniconda.html)
 5. Open the HTML file in your browser
 
    ```bash
-   open build/html/index.html
+   open _build/html/index.html
    ```
 
 You can check external links within the site by running:
