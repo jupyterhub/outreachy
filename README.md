@@ -1,6 +1,4 @@
-==========================================
-Outreachy organization repo for JupyterHub
-==========================================
+# Outreachy organization repo for JupyterHub
 
 This repository contains information about JupyterHub's
 participation in `Outreachy <https://www.outreachy.org/>`_ - a
@@ -21,8 +19,7 @@ This GitHub repository contains:
 4. **Documentation** describing the processes that the JupyterHub
    community follow when participating in Outreachy rounds.
 
-Project Ideas
-=============
+## Project Ideas
 
 To add a new project idea, copy `the idea template <ideas/template.rst>`_
 to a new file under ``ideas/``, and make a pull request.
@@ -30,8 +27,7 @@ to a new file under ``ideas/``, and make a pull request.
 - `JupyterHub native user management <ideas/native-jupyterhub-user-management.rst>`_.
 - `Highly available JupyterHub proxy with traefik <ideas/traefik-jupyterhub-proxy.rst>`_.
 
-How to Build the Documentation Locally
-======================================
+## How to Build the Documentation Locally
 
 Make sure you have [`conda` installed](https://conda.io/projects/conda/en/latest/user-guide/install/index.html) on your system.
 We recommend using [`miniconda`](https://docs.conda.io/en/latest/miniconda.html).
@@ -70,8 +66,6 @@ You can clean-up any generated files by running:
 make clean
 ```
 
-Code of Conduct
-===============
+## Code of Conduct
 
-We follow the `Project Jupyter Code of Conduct
-<https://github.com/jupyter/governance/blob/master/conduct/code_of_conduct.md>`_.
+We follow the [Project Jupyter Code of Conduct](https://github.com/jupyter/governance/blob/master/conduct/code_of_conduct.md).
