@@ -35,11 +35,8 @@ default_role = "literal"
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    "sphinx.ext.mathjax",
     "sphinx_copybutton",
     "myst_parser",
-    "sphinxext.rediraffe",
-    "sphinxext.opengraph",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
