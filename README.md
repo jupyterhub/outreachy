@@ -14,18 +14,8 @@ This GitHub repository contains:
 2. Descriptions for various **Projects Ideas** that applicants can
    apply for. Maintainers can use this space to collaborate on
    keeping these descriptions up to date.
-3. Project **Proposals** from applicants. These should be from
-   a standard template that is maintained in this repository.
-4. **Documentation** describing the processes that the JupyterHub
+3. **Documentation** describing the processes that the JupyterHub
    community follow when participating in Outreachy rounds.
-
-## Project Ideas
-
-To add a new project idea, copy `the idea template <ideas/template.rst>`_
-to a new file under ``ideas/``, and make a pull request.
-
-- `JupyterHub native user management <ideas/native-jupyterhub-user-management.rst>`_.
-- `Highly available JupyterHub proxy with traefik <ideas/traefik-jupyterhub-proxy.rst>`_.
 
 ## How to Build the Documentation Locally
 
