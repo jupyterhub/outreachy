@@ -18,6 +18,8 @@ This GitHub repository contains:
    keeping these descriptions up to date.
 3. Project **Proposals** from applicants. These should be from
    a standard template that is maintained in this repository.
+4. **Documentation** describing the processes that the JupyterHub
+   community follow when participating in Outreachy rounds.
 
 Project Ideas
 =============
@@ -27,6 +29,46 @@ to a new file under ``ideas/``, and make a pull request.
 
 - `JupyterHub native user management <ideas/native-jupyterhub-user-management.rst>`_.
 - `Highly available JupyterHub proxy with traefik <ideas/traefik-jupyterhub-proxy.rst>`_.
+
+How to Build the Documentation Locally
+======================================
+
+Make sure you have [`conda` installed](https://conda.io/projects/conda/en/latest/user-guide/install/index.html) on your system.
+We recommend using [`miniconda`](https://docs.conda.io/en/latest/miniconda.html).
+
+1. Create a new `conda` environment called `outreachy` that is running Python v3.10
+   ```bash
+   conda create -n outreachy python=3.10
+   ```
+2. Activate the new environment
+   ```bash
+   conda activate outreachy
+   ```
+3. Change into the `docs` folder and install the requirements
+   ```bash
+   cd docs
+   pip install -r requirements.txt
+   ```
+4. Build the HTML (still within the `docs` folder)
+   ```bash
+   make html
+   ```
+5. Open the HTML file in your browser
+   ```bash
+   open build/html/index.html
+   ```
+
+You can check external links within the site by running:
+
+```bash
+make linkcheck
+```
+
+You can clean-up any generated files by running:
+
+```bash
+make clean
+```
 
 Code of Conduct
 ===============
