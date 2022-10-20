@@ -14,7 +14,8 @@ formats: []
 
 # Optionally set the version of Python and requirements required to build your docs
 python:
-  version: 3.10
+  # 3.8 is currently the highest Python version available
+  version: 3.8
   install:
     # WARNING: This requirements file will be installed without the pip
     #          --upgrade flag in an existing environment. This means that if a
