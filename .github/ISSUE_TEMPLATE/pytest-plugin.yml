@@ -65,6 +65,6 @@ body:
       label: Issue description
       description: >
         If you chose the `No` option above, please describe the best as you can the issue,
-        sharing any errors you're seeing to help us undestand the issue. 
+        sharing any errors you're seeing to help us understand the issue.
     validations:
       required: false
