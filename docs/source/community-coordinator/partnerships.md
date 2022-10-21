@@ -7,6 +7,7 @@ benefit. We also often share resources with them. These partnerships are
 detailed below.
 
 (partners:ols)=
+
 ## Open Life Science
 
 [Open Life Science (OLS)](https://openlifesci.org/) are an organisation
@@ -17,6 +18,7 @@ expertise and reference their documentation where appropriate. We thank them,
 and especially [Yo Yehudi](https://yo-yehudi.com/), for their generous sharing.
 
 (partners:ols:mentor-training)=
+
 ### Mentor training
 
 One major way that we partner with OLS is providing training for mentors prior
