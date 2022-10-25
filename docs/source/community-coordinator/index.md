@@ -6,5 +6,6 @@ Organiser for JupyterHub during an Outreachy round.
 ```{toctree}
 :maxdepth: 2
 becoming-coordinator
+funding
 partnerships
 ```

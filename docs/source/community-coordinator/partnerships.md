@@ -6,6 +6,8 @@ learn about their best practices and develop them for the JupyterHub community's
 benefit. We also often share resources with them. These partnerships are
 detailed below.
 
+(partners:ols)=
+
 ## Open Life Science
 
 [Open Life Science (OLS)](https://openlifesci.org/) are an organisation
@@ -15,7 +17,9 @@ During the compilation of these guides, we have learned a lot from their
 expertise and reference their documentation where appropriate. We thank them,
 and especially [Yo Yehudi](https://yo-yehudi.com/), for their generous sharing.
 
-### Mentor Training
+(partners:ols:mentor-training)=
+
+### Mentor training
 
 One major way that we partner with OLS is providing training for mentors prior
 to the Outreachy internship period.

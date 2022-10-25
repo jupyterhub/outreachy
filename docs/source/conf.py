@@ -79,3 +79,14 @@ html_logo = "_static/images/logo/logo.png"
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+
+# -- Options for linkcheck builder -------------------------------------------
+# ref: https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-the-linkcheck-builder
+
+# A list of regular expressions that match anchors Sphinx should skip when checking
+# the validity of anchors in links. Outreachy.org is a notoriously buggy website,
+# especially regarding anchors that do not redirect properly.
+
+linkcheck_ignore = [
+    "https://www.outreachy.org/docs/community/#",
+]
