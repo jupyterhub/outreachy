@@ -15,11 +15,11 @@ through them and post a comment thanking the applicant for their contribution,
 and then close the issue.
 
 ```{bash}
-Usage: comment-close-issues.py [OPTIONS] ISSUE_LABELS...                                           
-                                                                                                    
- Loop over a list of GitHub issues that have specific labels, leave a comment on each issue, then   
- close it.                                                                                          
-                                                                                                    
+Usage: comment-close-issues.py [OPTIONS] ISSUE_LABELS...
+
+ Loop over a list of GitHub issues that have specific labels, leave a comment on each issue, then
+ close it.
+
 ╭─ Arguments ──────────────────────────────────────────────────────────────────────────────────────╮
 │ *    issue_labels      ISSUE_LABELS...  [default: None] [required]                               │
 ╰──────────────────────────────────────────────────────────────────────────────────────────────────╯
