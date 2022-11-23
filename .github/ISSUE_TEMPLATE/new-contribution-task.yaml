@@ -1,4 +1,5 @@
 name: "Mentor: Create a new task for the contribution period"
+description: "Create a task for Outreachy applicants to complete"
 title: "[Outreachy Task]: "
 labels:
   - microtask
