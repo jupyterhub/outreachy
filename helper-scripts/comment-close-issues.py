@@ -3,11 +3,15 @@ import sys
 import requests
 import typer
 
+# https://typer.tiangolo.com/tutorial/exceptions/#disable-local-variables-for-security
+app = typer.Typer(pretty_exceptions_show_locals=False)
+
 
 def construct_root_api_url(repo: str):
     return "/".join(["https://api.github.com/repos", repo])
 
 
+@app.command()
 def main(
     issue_labels: list[str],
     full_repo_name: str = "jupyterhub/outreachy",
@@ -71,4 +75,4 @@ def main(
 
 
 if __name__ == "__main__":
-    typer.run(main)
+    app()
