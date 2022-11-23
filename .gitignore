@@ -2,6 +2,10 @@
 docs/_build
 docs/build
 
+# nox folder and files
+.nox
+*nox*
+
 # Compiled source #
 ###################
 *.com
