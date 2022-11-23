@@ -1,4 +1,5 @@
 (comm-coord)=
+
 # Community Coordinator Guide
 
 This guide contains information for a JupyterHub member to become a Community
