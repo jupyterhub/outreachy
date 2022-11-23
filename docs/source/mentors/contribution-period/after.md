@@ -11,6 +11,14 @@ After the contribution period closes, you will probably be left with a lot of
 open issues and/or pull requests in our Outreachy repo and the general
 JupyterHub ecosystem!
 
+### Archiving issue forms
+
+If you [created an issue form](microtasks:create:issue-forms) as part of a
+microtask, please "archive" it by moving it to the
+[archive folder](https://github.com/jupyterhub/outreachy/tree/main/.github/ISSUE_TEMPLATE/archive).
+This prevents it from clogging up the repo's template chooser after the
+contribution period closes.
+
 ### Closing issues
 
 We have a provided a [short Python script](https://github.com/jupyterhub/outreachy/blob/HEAD/helper-scripts/comment-close-issues.py)
