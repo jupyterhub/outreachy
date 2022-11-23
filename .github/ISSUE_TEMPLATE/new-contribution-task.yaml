@@ -17,6 +17,17 @@ body:
       required: true
   - type: textarea
     attributes:
+      label: Pre-requisite tasks
+      description: |
+        Are there any pre-requisite tasks the applicant must have completed before tackling this issue?
+      placeholder: |
+        This could be setup steps or easier microtasks.
+      value: |
+        Not applicable
+    validations:
+      required: false
+  - type: textarea
+    attributes:
       label: Task Description
       description: |
         Please provide a description of the task to be completed
