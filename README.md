@@ -19,51 +19,61 @@ This GitHub repository contains:
 
 ## How to Build the Documentation Locally
 
-Make sure you have [`conda` installed](https://conda.io/projects/conda/en/latest/user-guide/install/index.html) on your system.
-We recommend using [`miniconda`](https://docs.conda.io/en/latest/miniconda.html).
+You will need a Python installation and the [`nox` package](https://nox.thea.codes/) installed.
 
-1. Create a new `conda` environment called `outreachy` that is running Python v3.10
-
-   ```bash
-   conda create -n outreachy python=3.10
-   ```
-
-2. Activate the new environment
+1. Install `nox` via `pip`
 
    ```bash
-   conda activate outreachy
+   pip install nox
    ```
 
-3. Change into the `docs` folder and install the requirements
+2. Build the documentation
 
    ```bash
-   cd docs
-   pip install -r requirements.txt
+   nox -s docs
    ```
 
-4. Build the HTML (still within the `docs` folder)
+   You can open the `docs/_build/html/index.html` file in your local browser to
+   view the site.
+
+Alternatively, you can watch the `docs` folder for changes and have a copy of
+the site live update as you work.
+
+1. Autobuild the documentation
 
    ```bash
-   make html
+   nox -s docs-live
    ```
 
-5. Open the HTML file in your browser
+2. Open `http://127.0.0.1:8000` in your browser to see the site in real time
 
-   ```bash
-   open _build/html/index.html
-   ```
+### Check for broken links
 
-You can check external links within the site by running:
+You can check for broken links within the documentation by changing into the
+`docs` folder and running the linkcheck command.
 
 ```bash
+cd docs
 make linkcheck
 ```
 
-You can clean-up any generated files by running:
+### Cleaning up generated files
 
-```bash
-make clean
-```
+There are two methods of cleaning up generated files.
+
+1. Using Sphinx
+
+   ```bash
+   cd docs
+   make clean
+   ```
+
+2. Using git. elete untracked files (`-X`), with required confirmation (`-f`),
+   recursively (`-d`).
+
+   ```bash
+   git clean -Xfd
+   ```
 
 ## Code of Conduct
 
