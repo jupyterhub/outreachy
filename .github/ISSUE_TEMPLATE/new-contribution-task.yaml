@@ -12,8 +12,8 @@ body:
         issue after you create it.
       multiple: false
       options:
-        - label: Single applicant
-        - label: Multiple applicants
+        - Single applicant
+        - Multiple applicants
     validations:
       required: true
   - type: textarea
