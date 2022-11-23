@@ -89,4 +89,5 @@ html_static_path = ['_static']
 
 linkcheck_ignore = [
     "https://www.outreachy.org/docs/community/#",
+    "(.*)?README.md#"
 ]
