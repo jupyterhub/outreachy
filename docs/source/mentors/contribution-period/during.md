@@ -1,10 +1,12 @@
 (contrib:during)=
+
 # During the Contribution Period
 
 The [Community Coordinator](comm-coord) can help you organise and facilitate
 these activities if required.
 
 (contrib:during:q&a)=
+
 ## Hold a Q&A session with Outreachy applicants
 
 It has been really beneficial to run a Q&A session with the applicants during the
@@ -35,6 +37,7 @@ Preparing for and running this meeting involves:
   - See the [Q&A from November 2022 on Discourse](https://discourse.jupyter.org/t/outreachy-internship-faq/16405)
 
 (contrib:during:sync-up)=
+
 ## Hold a sync-up meeting
 
 The mentors should sync-up around week 3 of the contribution period to assess

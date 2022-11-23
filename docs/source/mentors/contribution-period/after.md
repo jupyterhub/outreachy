@@ -1,4 +1,5 @@
 (contrib:after)=
+
 # After the Contribution Period Closes
 
 The [Community Coordinator](comm-cord) can help organise and facilitate these
@@ -25,6 +26,7 @@ in terms of low quality and merge conflicts. It might be more mangeable to do
 this in a sprint with the other mentors.
 
 (contrib:after:retrospective)=
+
 ## Hold a retrospective
 
 If you have the capacity, holding a [retrospective](https://blog.zenhub.com/tips-and-techniques-for-better-sprint-retrospective-meetings/)
