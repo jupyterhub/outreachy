@@ -27,8 +27,7 @@ body:
     attributes:
       label: Steps to Complete
       description: |
-        Please provide an ordered list of steps the applicant should take to
-        complete this task
+        Please provide an ordered list of steps the applicant should take to complete this task
       placeholder: |
         1. Fork and clone the repo...
         2. Edit this file to do X...
@@ -45,8 +44,7 @@ body:
     attributes:
       label: How to record the contribution on Outreachy
       description: |
-        Please describe how the applicant should record their contribution on the
-        Outreachy website
+        Please describe how the applicant should record their contribution on the Outreachy website
       placeholder: |
         Examples include:
           - Copy the link to the Pull Request you created
@@ -63,28 +61,23 @@ body:
       label: |
         What is the maximum number of times an applicant can complete this task?
       placeholder: |
-        We recommend keeping this value between one and three so that applicants
-        can have an opportunity to practice, but not flood the Outreachy platform
-        with contributions.
+        We recommend keeping this value relatively low
     validations:
       required: true
   - type: textarea
     attributes:
       label: Follow-up tasks
       description: |
-        What tasks should an applicant move onto after they've completed this
-        task?
+        What tasks should an applicant move onto after they've completed this task?
       value: |
-        Not applicable. Please make sure you have recorded all your contributions
-        and begin working on your final application!
+        Please make sure you have recorded all your contributions and begin working on your final application!
     validations:
       required: false
   - type: textarea
     attributes:
       label: Extra Resources
       description: |
-        Optionally provide some resources to help the applicants complete the
-        task.
+        Optionally provide some resources to help the applicants complete the task
       placeholder: |
         Some generally useful resources to include here are:
           - How to fork a repo: https://docs.github.com/en/get-started/quickstart/fork-a-repo
