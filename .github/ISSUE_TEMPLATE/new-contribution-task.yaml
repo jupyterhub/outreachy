@@ -8,8 +8,7 @@ body:
     attributes:
       label: How many applicants can simultaneously work on this task?
       description: |
-        If it is multiple applicants, please add the "multiple" label to the
-        issue after you create it.
+        If it is multiple applicants, please add the "multiple" label to the issue after you create it.
       multiple: false
       options:
         - Single applicant
