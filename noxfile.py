@@ -6,6 +6,7 @@ BUILD_COMMAND = ["-b", "html", "docs/source", "docs/_build/html"]
 
 
 def install_deps(session):
+    session.conda_install("python=3.10")
     session.install("-r", "docs/requirements.txt")
 
 
