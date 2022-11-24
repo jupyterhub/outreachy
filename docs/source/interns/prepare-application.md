@@ -87,7 +87,7 @@ Your outline should include:
 - Things happen! We can't foresee every problem! Applications that say "I will
   do A and B. If there is time, I will do C." are encouraged
 
-Here are a couple of successful applications to help you
+Here are a couple of successful applications to help you:
 
 - [2018 GSoC applicants to InterMine](https://github.com/nupurgunwant/GSoC-Proposal)
   - This is a little bit different from the Outreachy application, but should
