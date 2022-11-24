@@ -68,7 +68,7 @@ There are two methods of cleaning up generated files.
    make clean
    ```
 
-2. Using git. elete untracked files (`-X`), with required confirmation (`-f`),
+2. Using git. Delete untracked files (`-X`), with required confirmation (`-f`),
    recursively (`-d`).
 
    ```bash
