@@ -1,0 +1,98 @@
+name: "Mentor: Create a new task for the contribution period"
+description: "Create a task for Outreachy applicants to complete"
+title: "[Outreachy Task]: "
+labels:
+  - microtask
+body:
+  - type: dropdown
+    attributes:
+      label: How many applicants can simultaneously work on this task?
+      description: |
+        If it is multiple applicants, please add the "multiple" label to the issue after you create it.
+      multiple: false
+      options:
+        - Single applicant
+        - Multiple applicants
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Pre-requisite tasks
+      description: |
+        Are there any pre-requisite tasks the applicant must have completed before tackling this issue?
+      placeholder: |
+        This could be setup steps or easier microtasks.
+      value: |
+        Not applicable
+    validations:
+      required: false
+  - type: textarea
+    attributes:
+      label: Task Description
+      description: |
+        Please provide a description of the task to be completed
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Steps to Complete
+      description: |
+        Please provide an ordered list of steps the applicant should take to complete this task
+      placeholder: |
+        1. Fork and clone the repo...
+        2. Edit this file to do X...
+        3. Open a Pull Request...
+
+        If multiple applicants can work on this task, you may also want to
+        include instructions on how to update a tracking mechanism, so we know
+        who is working on what. This could be a spreadsheet, such as
+        https://docs.google.com/spreadsheets/d/1pHg2igoZOCwF4GOEEDblLJ_e29OIRgUkvtKz2bTcOmM/edit?usp=share_link,
+        or a different mechanism.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: How to record the contribution on Outreachy
+      description: |
+        Please describe how the applicant should record their contribution on the Outreachy website
+      placeholder: |
+        Examples include:
+          - Copy the link to the Pull Request you created
+          - Copy the link to an issue you opened
+          - Copy the link to a comment you left on an issue or Pull Request
+
+        Providing links to documentation or screenshots of how to get these links,
+        especially for the comment example, is really appreciated since many
+        applicants may never have used GitHub before!
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: |
+        What is the maximum number of times an applicant can complete this task?
+      placeholder: |
+        We recommend keeping this value relatively low
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Follow-up tasks
+      description: |
+        What tasks should an applicant move onto after they've completed this task?
+      value: |
+        Please make sure you have recorded all your contributions and begin working on your final application!
+    validations:
+      required: false
+  - type: textarea
+    attributes:
+      label: Extra Resources
+      description: |
+        Optionally provide some resources to help the applicants complete the task
+      placeholder: |
+        Some generally useful resources to include here are:
+          - How to fork a repo: https://docs.github.com/en/get-started/quickstart/fork-a-repo
+          - GitHub flow: https://docs.github.com/en/get-started/quickstart/github-flow
+          - Creating a pull request from a fork: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork
+          - Resolving a merge conflict: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-on-github
+    validations:
+      required: false

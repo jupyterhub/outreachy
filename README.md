@@ -42,7 +42,7 @@ the site live update as you work.
 1. Autobuild the documentation
 
    ```bash
-   nox -s docs-live
+   nox -s docs -- live
    ```
 
 2. Open `http://127.0.0.1:8000` in your browser to see the site in real time
