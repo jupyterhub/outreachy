@@ -20,9 +20,9 @@ import datetime
 
 # -- Project information -----------------------------------------------------
 
-project = 'Outreachy Internships with JupyterHub'
+project = "Outreachy Internships with JupyterHub"
 copyright = f"{datetime.date.today().year}, Project Jupyter Contributors"
-author = 'Project Jupyter Contributors'
+author = "Project Jupyter Contributors"
 
 
 # -- General configuration ---------------------------------------------------
@@ -40,12 +40,12 @@ extensions = [
 ]
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
+templates_path = ["_templates"]
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
 # The root toctree document.
 root_doc = master_doc = "index"
@@ -78,7 +78,7 @@ html_logo = "_static/images/logo/logo.png"
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
+html_static_path = ["_static"]
 
 # -- Options for linkcheck builder -------------------------------------------
 # ref: https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-the-linkcheck-builder
