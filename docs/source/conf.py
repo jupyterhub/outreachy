@@ -87,7 +87,4 @@ html_static_path = ["_static"]
 # the validity of anchors in links. Outreachy.org is a notoriously buggy website,
 # especially regarding anchors that do not redirect properly.
 
-linkcheck_ignore = [
-    "https://www.outreachy.org/docs/community/#",
-    "(.*)?README.md#"
-]
+linkcheck_ignore = ["https://www.outreachy.org/docs/community/#", "(.*)?README.md#"]
