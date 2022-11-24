@@ -1,5 +1,6 @@
 import os
 import sys
+
 import requests
 import typer
 
@@ -15,7 +16,7 @@ def construct_root_api_url(repo: str):
 def main(
     issue_labels: list[str],
     full_repo_name: str = "jupyterhub/outreachy",
-    comment_body: str = "Thank you for your contribution! Since the contribution period is now over, we will close this issue."
+    comment_body: str = "Thank you for your contribution! Since the contribution period is now over, we will close this issue.",
 ):
     """
     Loop over a list of GitHub issues that have specific labels, leave a comment
@@ -33,7 +34,7 @@ def main(
     headers = {
         "Accept": "application/vnd.github+json",
         "Authorization": f"Bearer {token}",
-    }    
+    }
 
     # List all issues on full_repo_name that have labels issues_labels
     url = "/".join([root_url, "issues"])
@@ -41,7 +42,7 @@ def main(
     all_issues = requests.get(url, params=params, headers=headers)
     if not all_issues.ok:
         sys.exit(
-            f"Could not list requested issues"
+            "Could not list requested issues"
             + f"\n\tStatus: {all_issues.status}"
             + f"\n\tMessage: {all_issues.text}"
         )
@@ -61,9 +62,7 @@ def main(
             continue
 
         # Close the issue
-        resp = requests.patch(
-            issue["url"], json={"state": "closed"}, headers=headers
-        )
+        resp = requests.patch(issue["url"], json={"state": "closed"}, headers=headers)
         if not resp.ok:
             print(
                 f"Could not close issue: {issue['html_url']}"
