@@ -19,6 +19,7 @@ the difficulty level of the task.
 
 % DataTables config to make the table above look nice
 % TODO: Figure out how to make this work nicely with dark theme
+
 <link rel="stylesheet"
       href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
 <script type="text/javascript"
@@ -34,6 +35,7 @@ $(document).ready( function () {
 </script>
 
 % Make the tables a little bit more compact since there's a lot of text
+
 <style>
     table {
         font-size: .7em;

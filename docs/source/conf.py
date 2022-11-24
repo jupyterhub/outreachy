@@ -90,6 +90,6 @@ html_static_path = ["_static"]
 linkcheck_ignore = ["https://www.outreachy.org/docs/community/#", "(.*)?README.md#"]
 
 # -- Custom scripts ----------------------------------------------------------
-import subprocess
+import subprocess  # noqa: E402
 
 subprocess.run(["python", "../../helper-scripts/get-repo-issues.py"])
