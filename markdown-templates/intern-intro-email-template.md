@@ -92,7 +92,7 @@ following actions:
 3. If you believe the Community Coordinator has a conflict of interest regarding
    your issue, you can reach out to our co-mentor(s): {NAME, EMAIL}
 4. Finally, if you do not feel that the issue can be resolved within the JupyterHub
-   community, you can contact the Outreachy organisers: {LINK}
+   community, you can contact the Outreachy organisers: organizers@outreachy.org
 
 We realise that that was a lot of information to digest, so please ask any
 questions! We look forward to start working with you soon!
