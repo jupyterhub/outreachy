@@ -23,7 +23,7 @@ In the JupyterHub community, we use HackMD (https://hackmd.io) for collaborative
 notetaking, which is the platform your notes document has been created on. If
 you are new to HackMD, you can read this short guide from Open Life Science on
 how to use it: https://hackmd.io/@openlifescience/OLS-HackMD-guide However, this
-also is for guidance only, and if using another platform, like Google Docs,
+is also for guidance only, and if using another platform, like Google Docs,
 works better - that's ok too!
 
 ## Setup your Mentor Meetings
