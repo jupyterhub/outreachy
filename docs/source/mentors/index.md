@@ -5,5 +5,6 @@ mentor during an Outreachy round.
 
 ```{toctree}
 :maxdepth: 2
+contribution-period/index
 application-review
 ```
