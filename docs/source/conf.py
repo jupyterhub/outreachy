@@ -88,3 +88,8 @@ html_static_path = ["_static"]
 # especially regarding anchors that do not redirect properly.
 
 linkcheck_ignore = ["https://www.outreachy.org/docs/community/#", "(.*)?README.md#"]
+
+# -- Custom scripts ----------------------------------------------------------
+import subprocess
+
+subprocess.run(["python", "../../helper-scripts/get-repo-issues.py"])
