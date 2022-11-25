@@ -59,7 +59,7 @@ by the end of the week.
 ## Tell us about yourself for a welcome blog
 
 We would like to post to the Jupyter blog (https://blog.jupyter.org) to tell the
-community a little bit about yourselves and what you'll be working on Could you
+community a little bit about yourselves and what you'll be working on. Could you
 please provide a few short sentences covering:
 
 - Who you are
