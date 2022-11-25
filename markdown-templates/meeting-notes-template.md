@@ -5,12 +5,13 @@ tags: outreachy, meeting, template, mentor-intern
 # Outreachy Meeting Minutes: {Intern Name} + {Mentor NAME(s)}
 
 :::info
+
 - **Call time:** _TBA_
 - **Call joining link:** _TBA_
 - **Project name:** _TBA_
 - **Intern:** _TBA_
 - **Mentor(s):** _TBA_
-:::
+  :::
 
 **Table of contents:**
 
@@ -21,7 +22,7 @@ It is a good practice to collect a set of points you'd like to talk to your ment
 
 - How your project is progressing
 - Are there specific problems or questions you'd like to ask your mentor?
-:::
+  :::
 
 ## Week 1
 
