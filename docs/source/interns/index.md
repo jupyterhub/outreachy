@@ -11,5 +11,5 @@ for the _source of truth_ of what to expect generally.
 :maxdepth: 2
 
 prepare-application
-contribution-period/current-tasks
+current-tasks
 ```
