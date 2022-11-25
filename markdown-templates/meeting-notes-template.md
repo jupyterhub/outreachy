@@ -2,7 +2,7 @@
 tags: outreachy, meeting, template, mentor-intern
 ---
 
-# Outreachy Meeting Minutes: {Intern Name} + {Mentor NAME(s)}
+# Outreachy Meeting Minutes: {Intern Name} + {Mentor Name(s)}
 
 <!-- The ::: syntax only works on HackMD -->
 
