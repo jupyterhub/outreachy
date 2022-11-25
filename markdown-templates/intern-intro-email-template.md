@@ -1,6 +1,6 @@
 # Email template: Intern Introduction
 
-Dear {APPLICANT NAME},
+Dear {INTERN NAME},
 
 Welcome to the JupyterHub community! We are so excited to have you here and begin
 working with you on your Outreachy project: **{PROJECT TITLE}**. This email will
