@@ -11,3 +11,5 @@ Topics of the templates included here cover:
   - Also editable on HackMD and synced to this GitHub repo
     [![hackmd-github-sync-badge](https://hackmd.io/ts3SP5TzTreqtqGqoBguwA/badge)](https://hackmd.io/ts3SP5TzTreqtqGqoBguwA)
     ([Read up on this functionality](https://hackmd.io/c/tutorials/%2Fs%2Flink-with-github))
+- A template email to send to the interns before their first week with instructions
+  on setting up their mentor meetings
