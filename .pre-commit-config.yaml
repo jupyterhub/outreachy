@@ -45,3 +45,7 @@ repos:
         args:
           - --max-line-length=88
           - --extend-ignore=E203,E501
+
+# pre-commit.ci config reference: https://pre-commit.ci/#configuration
+ci:
+  autoupdate_schedule: monthly
