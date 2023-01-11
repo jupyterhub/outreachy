@@ -1,3 +1,5 @@
+(partners)=
+
 # Partnerships
 
 To build out content and processes for this guide, previous Community Coordinators
