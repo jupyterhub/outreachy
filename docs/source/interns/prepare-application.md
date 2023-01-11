@@ -14,7 +14,7 @@ _specifically for the JupyterHub community_.
 ```{seealso}
 Outreachy provides their own, more general
 [guide on how to complete your Final Application](https://www.outreachy.org/docs/applicant/#final-application).
-Please make to read through this as well.
+Please make sure to read through this as well.
 ```
 
 Your first priority during the contribution period should be figuring out how
