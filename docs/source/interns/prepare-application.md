@@ -21,7 +21,24 @@ Your first priority during the contribution period should be figuring out how
 to become an effective contributor. Start developing your final application only
 once you have experience iterating on your pull requests to get them ready to
 merge. This way, you'll have a much better idea of how much you can accomplish
-and how you may wish to tackle your chosen project.
+and how you may wish to tackle your chosen project. **It is ok if your pull
+requests have not been merged when you begin working on your final application,
+or if they are not merged before the application deadline.**
+
+```{note} What does iterating on your pull request mean?
+When pull requests are opened on a project, other members of the community
+will review the changes and provide feedback. Sometimes it is important that
+this feedback be incorporated into the pull request before it can be merged.
+And sometimes you may be asked to make further changes once the first set of
+feedback has been addressed. This is what we mean by "iterating on your pull
+requests" - it's referring to this feedback cycle.
+
+This feedback cycle is normal behaviour is most open source communities and,
+generally speaking, maintainers try to keep the cycle short. You may be asked
+to open new issues or new pull requests to track pieces of feedback that the
+team would like to include in the future, but don't think it is necessary to
+include in your current pull request.
+```
 
 The JupyterHub team has a fluid approach to planning, which means it is likely
 that the set of issues described in the project description and your final
