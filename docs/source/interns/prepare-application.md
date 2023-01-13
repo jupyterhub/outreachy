@@ -25,7 +25,7 @@ and how you may wish to tackle your chosen project. **It is ok if your pull
 requests have not been merged when you begin working on your final application,
 or if they are not merged before the application deadline.**
 
-```{note} What does iterating on your pull request mean?
+```{admonition} What does iterating on your pull request mean?
 When pull requests are opened on a project, other members of the community
 will review the changes and provide feedback. Sometimes it is important that
 this feedback be incorporated into the pull request before it can be merged.
