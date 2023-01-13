@@ -78,6 +78,8 @@ Please answer these questions in the relevant section of your application:
 1. **In your own words, what problem is the project attempting to solve?**
    (_50 words max_)
 2. **In your own words, what is the main goal of the project?** (_50 words max_)
+3. **In your own words, what would need to happen for this project to be
+   successful?** (_50 words max_)
 
 With the answers to these questions, you should be able to begin developing your
 [](application-prep:put-together:proj-outline).
