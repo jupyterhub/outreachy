@@ -10,6 +10,8 @@ for the _source of truth_ of what to expect generally.
 ```{toctree}
 :maxdepth: 2
 
+criteria
+contribution-period
 prepare-application
 current-tasks
 ```
