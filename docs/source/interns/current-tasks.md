@@ -19,10 +19,6 @@ task, a label indicating which project it is connected to, an indication of
 how many applicants can work on the issue simultaneously, and a label indicating
 the difficulty level of the task.
 
-```{attention}
-If the table doesn't show, that means we don't currently have any open issues!
-```
-
 <div class="full-width microtask-table">
 
 ```{csv-table}
