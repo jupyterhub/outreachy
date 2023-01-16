@@ -92,4 +92,4 @@ linkcheck_ignore = ["https://www.outreachy.org/docs/community/#", "(.*)?README.m
 # -- Custom scripts ----------------------------------------------------------
 import subprocess  # noqa: E402
 
-subprocess.run(["python", "../../helper-scripts/get-repo-issues.py"])
+subprocess.run([sys.executable, "../../helper-scripts/get-repo-issues.py"])
