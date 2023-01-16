@@ -14,7 +14,7 @@ the difficulty level of the task.
 If the table doesn't show, that means we don't currently have any open issues!
 ```
 
-<div class="full-width hubs-table">
+<div class="full-width microtask-table">
 
 ```{csv-table}
 :header-rows: 1
@@ -33,7 +33,7 @@ If the table doesn't show, that means we don't currently have any open issues!
 
 <script>
 $(document).ready( function () {
-    $('.hubs-table table').DataTable( {
+    $('.microtask-table table').DataTable( {
         "order": [[ 0, "template" ]],
         "pageLength": 25
     });
