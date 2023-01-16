@@ -2,7 +2,7 @@
 
 # After the Contribution Period Closes
 
-The [Community Coordinator](comm-cord) can help organise and facilitate these
+The [Community Coordinator](comm-coord) can help organise and facilitate these
 activities if required.
 
 ## Clean up the repo
