@@ -6,7 +6,7 @@ expectations and responsibilities you will have while mentoring with Outreachy.
 Where possible, we aim to provide [training](partners:ols:mentor-training) for
 our mentors via our partnership with [](partners:ols).
 
-## Why you should become a mentor?
+## Why you should become a mentor
 
 - ...
 - ...
