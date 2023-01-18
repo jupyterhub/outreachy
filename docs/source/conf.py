@@ -17,6 +17,7 @@
 # -- Project specific imports ------------------------------------------------
 
 import datetime
+import sys
 
 # -- Project information -----------------------------------------------------
 
@@ -88,3 +89,8 @@ html_static_path = ["_static"]
 # especially regarding anchors that do not redirect properly.
 
 linkcheck_ignore = ["https://www.outreachy.org/docs/community/#", "(.*)?README.md#"]
+
+# -- Custom scripts ----------------------------------------------------------
+import subprocess  # noqa: E402
+
+subprocess.run([sys.executable, "../../helper-scripts/get-repo-issues.py"])
