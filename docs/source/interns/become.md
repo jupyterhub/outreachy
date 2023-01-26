@@ -2,6 +2,6 @@
 
 ## Past Outreachy interns
 
-```{include} ../../tmp/outreachy_interns.txt
+```{include} ../tmp/outreachy_interns.txt
 
 ```
