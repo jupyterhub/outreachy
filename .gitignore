@@ -2,9 +2,6 @@
 docs/_build
 docs/build
 
-# tmp folder
-docs/tmp
-
 # nox folder and files
 .nox
 *nox*
