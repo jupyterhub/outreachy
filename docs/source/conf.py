@@ -36,6 +36,7 @@ default_role = "literal"
 # ones.
 extensions = [
     "sphinx_copybutton",
+    "sphinx_design",
     "myst_parser",
 ]
 
