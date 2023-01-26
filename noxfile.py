@@ -23,6 +23,7 @@ def docs(session):
         # Add relative paths here if we ever need to ignore them during autobuilds
         AUTOBUILD_IGNORE = [
             "docs/_build",
+            "docs/tmp",
         ]
 
         cmd = ["sphinx-autobuild"]
