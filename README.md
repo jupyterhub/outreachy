@@ -1,6 +1,6 @@
 # Outreachy organization repo for JupyterHub
 
-[![Join the chat at https://gitter.im/jupyterhub/outreachy](https://badges.gitter.im/jupyterhub/outreachy.svg)](https://gitter.im/jupyterhub/outreachy?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+Chat room for Outreachy _interns_: [![Join the chat at https://gitter.im/jupyterhub/outreachy](https://badges.gitter.im/jupyterhub/outreachy.svg)](https://gitter.im/jupyterhub/outreachy?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 This repository contains information about JupyterHub's
 participation in [Outreachy](https://www.outreachy.org/) - a
