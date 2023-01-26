@@ -31,19 +31,22 @@ for cohort in interns_data:
     cohort["interns"] = sorted(cohort["interns"], key=lambda x: x["name"])
 
     # Begin MyST definition of grid with cards
-    grid_md = dedent("""
+    grid_md = dedent(
+        """
         `````{{grid}} 1 2 3 3
         :gutter: 3
         :class-container: contributor-grid
 
         {card_md}
         `````
-    """)
+    """
+    )
 
     # Add cards to the grid for each intern
     card_md = ""
     for intern in cohort["interns"]:
-        card_md += dedent(f"""
+        card_md += dedent(
+            f"""
             ````{{grid-item-card}}
             :class-header: bg-light
             :text-align: center
@@ -58,8 +61,9 @@ for cohort in interns_data:
 
             [@{intern['github_handle']}](https://github.com/{intern['github_handle']})
             ````
-        """)
-    
+        """
+        )
+
     # Add the markdown for the sphinx design cards into the grid and add cohort
     # year as title
     grid_md = grid_md.format(card_md=card_md)

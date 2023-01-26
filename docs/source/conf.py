@@ -17,8 +17,8 @@
 # -- Project specific imports ------------------------------------------------
 
 import datetime
-from subprocess import run
 import sys
+from subprocess import run
 
 # -- Project information -----------------------------------------------------
 
