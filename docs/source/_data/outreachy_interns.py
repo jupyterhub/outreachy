@@ -50,7 +50,6 @@ for cohort in interns_data:
             ````{{grid-item-card}}
             :class-header: bg-light
             :text-align: center
-            :link: {intern['blog_url']}
 
             **{intern['name']}**
 
@@ -60,6 +59,9 @@ for cohort in interns_data:
             ```
 
             [@{intern['github_handle']}](https://github.com/{intern['github_handle']})
+
+            +++
+            [Read their blog!]({intern['blog_url']})
             ````
         """
         )
