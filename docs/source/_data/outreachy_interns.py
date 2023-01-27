@@ -3,9 +3,13 @@ from datetime import datetime
 from pathlib import Path
 from textwrap import dedent
 
+import jsonschema
+from jsonschema import validate
+
 # Set filepath to interns data file
 data_path = Path(__file__).resolve().parent
 interns_data_file = data_path.joinpath("outreachy_interns.json")
+interns_schema_file = data_path.joinpath("outreachy_interns.schema.json")
 
 # Set path to save output file in. Create a tmp dir if it doesn't exist.
 docs_path = data_path.parent
@@ -16,6 +20,16 @@ output_path = tmp_path.joinpath("outreachy_interns.txt")
 # Read in json defining Outreachy interns
 with open(interns_data_file) as f:
     interns_data = json.load(f)
+
+# Read in the JSON schema file
+with open(interns_schema_file) as f:
+    interns_schema = json.load(f)
+
+# Validate the data against the schema
+try:
+    validate(interns_data, interns_schema)
+except jsonschema.exceptions.ValidationError as err:
+    raise err
 
 # Sort cohorts in reverse chronological order
 interns_data = sorted(

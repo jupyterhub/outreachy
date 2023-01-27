@@ -4,3 +4,4 @@ sphinx-autobuild
 sphinx-copybutton
 sphinx-design
 myst-parser[linkify]
+jsonschema
