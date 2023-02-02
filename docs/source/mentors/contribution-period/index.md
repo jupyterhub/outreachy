@@ -1,3 +1,5 @@
+(contribution-period)=
+
 # The Outreachy Contribution Period
 
 The Contribution Period is a month before internships begin where Outreachy
