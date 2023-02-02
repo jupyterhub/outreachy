@@ -12,7 +12,7 @@ interns_data_file = data_path.joinpath("outreachy_interns.json")
 interns_schema_file = data_path.joinpath("outreachy_interns.schema.json")
 
 # Set path to save output file in. Create a tmp dir if it doesn't exist.
-docs_path = data_path.parent
+docs_path = data_path.parent.parent
 tmp_path = docs_path.joinpath("tmp")
 tmp_path.mkdir(exist_ok=True)
 output_path = tmp_path.joinpath("outreachy_interns.txt")
