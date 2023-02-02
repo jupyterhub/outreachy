@@ -8,4 +8,5 @@ mentor during an Outreachy round.
 become-mentor
 contribution-period/index
 application-review
+during
 ```
