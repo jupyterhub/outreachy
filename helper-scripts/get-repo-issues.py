@@ -50,7 +50,6 @@ def get_microtask_issues(
     full_repo_name: str = "jupyterhub/outreachy",
     issue_labels: list[str] = ["microtask"],
 ):
-
     # Set the HTTP headers
     headers = {"Accept": "application/vnd.github+json"}
 
