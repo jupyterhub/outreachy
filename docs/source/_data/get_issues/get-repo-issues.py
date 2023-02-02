@@ -1,10 +1,11 @@
 from pathlib import Path
+from typing import List
 
 import pandas as pd
 import requests
 
-PATH_ROOT = Path(__file__).parent.parent
-PATH_TMP = PATH_ROOT.joinpath("docs", "source", "tmp")
+PATH_ROOT = Path(__file__).parent.parent.parent
+PATH_TMP = PATH_ROOT.joinpath("tmp")
 PATH_TMP.mkdir(exist_ok=True)
 
 
@@ -48,7 +49,7 @@ def get_repo_issues(repo: str, headers: dict = {}, params: dict = {}):
 
 def get_microtask_issues(
     full_repo_name: str = "jupyterhub/outreachy",
-    issue_labels: list[str] = ["microtask"],
+    issue_labels: List[str] = ["microtask"],
 ):
     # Set the HTTP headers
     headers = {"Accept": "application/vnd.github+json"}
