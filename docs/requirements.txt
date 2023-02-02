@@ -2,4 +2,6 @@ pydata-sphinx-theme
 sphinx
 sphinx-autobuild
 sphinx-copybutton
+sphinx-design
 myst-parser[linkify]
+jsonschema

@@ -18,6 +18,7 @@
 
 import datetime
 import sys
+from subprocess import run
 
 # -- Project information -----------------------------------------------------
 
@@ -37,6 +38,7 @@ default_role = "literal"
 # ones.
 extensions = [
     "sphinx_copybutton",
+    "sphinx_design",
     "myst_parser",
 ]
 
@@ -53,6 +55,10 @@ root_doc = master_doc = "index"
 
 # The suffix(es) of source filenames.
 source_suffix = [".md", ".rst"]
+
+# -- Generate table of Outreachy interns -------------------------------------
+
+run(["python", "_data/outreachy_interns.py"])
 
 # -- Options for HTML output -------------------------------------------------
 # ref: https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
