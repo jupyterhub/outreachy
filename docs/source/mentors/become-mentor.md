@@ -29,7 +29,8 @@ through and completing the work.
 
 ```{seealso}
 Outreachy document the full responsibilities and expectations of participating
-mentors, including time commitments, on [their website](https://www.outreachy.org/mentor/)
+mentors, including time commitments, on their website
+[here](https://www.outreachy.org/mentor/) and [here](https://www.outreachy.org/docs/internship/#mentor-expectations)
 ```
 
 The main expectations of mentors are:
