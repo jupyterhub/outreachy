@@ -5,3 +5,4 @@ sphinx-copybutton
 sphinx-design
 myst-parser[linkify]
 jsonschema
+pandas

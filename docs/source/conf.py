@@ -95,7 +95,7 @@ linkcheck_ignore = ["https://www.outreachy.org/docs/community/#", "(.*)?README.m
 import subprocess  # noqa: E402
 
 # Generate tables of issues
-subprocess.run([sys.executable, "../../helper-scripts/get-repo-issues.py"], check=True)
+subprocess.run([sys.executable, "_data/get_issues/get-repo-issues.py"], check=True)
 
 # Generate tables of Outreachy interns per cohort
 subprocess.run(["python", "_data/outreachy_interns/outreachy_interns.py"], check=True)

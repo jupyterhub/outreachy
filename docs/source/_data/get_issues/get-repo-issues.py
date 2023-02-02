@@ -3,8 +3,8 @@ from pathlib import Path
 import pandas as pd
 import requests
 
-PATH_ROOT = Path(__file__).parent.parent
-PATH_TMP = PATH_ROOT.joinpath("docs", "source", "tmp")
+PATH_ROOT = Path(__file__).parent.parent.parent
+PATH_TMP = PATH_ROOT.joinpath("tmp")
 PATH_TMP.mkdir(exist_ok=True)
 
 
