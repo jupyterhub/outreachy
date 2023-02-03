@@ -10,4 +10,5 @@ Organiser for JupyterHub during an Outreachy round.
 becoming-coordinator
 funding
 partnerships
+cohort-calls
 ```
