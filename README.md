@@ -1,7 +1,7 @@
 # Outreachy organization repo for JupyterHub
 
-| | |
-| :--- | :---: |
+|                                 |                                                                                                            |
+| :------------------------------ | :--------------------------------------------------------------------------------------------------------: |
 | Chat room for Outreachy interns | [![](https://img.shields.io/badge/chat-outreachy%20interns-green)](https://gitter.im/jupyterhub/outreachy) |
 
 This repository contains information about JupyterHub's
