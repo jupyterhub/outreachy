@@ -51,7 +51,7 @@ Outreachy's statement on [internship extension](https://www.outreachy.org/docs/i
 
 ## (Optional) Cohort calls
 
-You may also be invited to participate in cohort calls. These are calls designed
+You may also be invited to participate in [](cohort-calls). These are calls designed
 to bring you and other interns working on JupyterHub together to collaborate and
 learn about more broader aspects of open source, such as code review.
 
