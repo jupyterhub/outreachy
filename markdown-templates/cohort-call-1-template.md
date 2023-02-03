@@ -2,7 +2,7 @@
 tags: outreachy, cohort-call, template
 ---
 
-# Outreachy Cohort Call 1 - December 2022
+# Outreachy Cohort Call 1
 
 :::info
 **Call info:**
