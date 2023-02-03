@@ -1,4 +1,5 @@
 (cohort-calls)=
+
 # Cohort Calls
 
 This section describes cohort calls, what they are, and how to run them. The
@@ -41,11 +42,11 @@ and silent writing, for the interns to complete.
 Here are some templates for the cohort calls.
 
 - Call #1
-  - **Topic:** 
-  - **Templates:** 
+  - **Topic:**
+  - **Templates:**
 - Call #2
-  - **Topic:** 
-  - **Templates:** 
+  - **Topic:**
+  - **Templates:**
 - Call #3
-  - **Topic:** 
-  - **Templates:** 
+  - **Topic:**
+  - **Templates:**
