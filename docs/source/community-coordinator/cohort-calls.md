@@ -43,8 +43,8 @@ Here are some templates for the cohort calls. These templates are available in
 the GitHub repo, but also synced to HackMD documents.
 
 - Call #1
-  - **Topic:**
-  - **Templates:**
+  - **Topic:** Working Practices and What Makes a Project Good?
+  - **Templates:** [GitHub](https://github.com/jupyterhub/outreachy/blob/HEAD/markdown-templates/cohort-call-1-template.md) | [HackMD](https://hackmd.io/@sgibson91/jupyterhub-outreachy-cohort-call-1-template)
 - Call #2
   - **Topic:**
   - **Templates:**
