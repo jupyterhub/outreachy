@@ -10,7 +10,8 @@ tags: outreachy, cohort-call, template
 - Time/date: {{insert date and time here}}
   - Your timezone: {{insert and arewemeetingyet.com link here}}
 - Video conference link: {{insert a link to a video conferencing platform here}}
-  :::
+
+:::
 
 ## Joining the call / Roll call
 
@@ -31,7 +32,8 @@ Once you've joined the call:
 
 - Code of Conduct: https://jupyter.org/governance/conduct/code_of_conduct.html
 - Generally, treat others with kindness and respect, no matter who they are. - We know you do this already!
-  :::
+
+:::
 
 ## What is a Cohort Call?
 
