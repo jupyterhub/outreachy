@@ -13,7 +13,7 @@ Please check back soon!
 mentors/index
 ```
 
-## Intern Guide
+## Applicant and Intern Guide
 
 ```{toctree}
 :maxdepth: 2
