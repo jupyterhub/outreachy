@@ -1,3 +1,5 @@
+(funding)=
+
 # Funding
 
 Outreachy internships are _paid_ internships and a requirement of participating
@@ -45,6 +47,8 @@ Outreachy sets out expected working hours per week throughout the various stages
 of the process in their [mentor documentation](https://www.outreachy.org/mentor/#mentor)
 and this can be used to calculate a fair salary for mentors.
 
+(funding:discretionary)=
+
 ### Discretionary fund
 
 A discretionary fund to cover related expenses is also advised. Some line items
@@ -66,6 +70,8 @@ that could be covered by this fund include:
   during this period. Rather than solely relying on volunteers other than the
   mentors, we could also budget to pay some people for their time to help
   during this period.
+
+(funding:additional)=
 
 ## Additional interns
 

@@ -5,6 +5,8 @@
 The [Community Coordinator](comm-coord) can help organise and facilitate these
 activities if required.
 
+(contrib:after:clean-up)=
+
 ## Clean up the repo
 
 After the contribution period closes, you will probably be left with a lot of

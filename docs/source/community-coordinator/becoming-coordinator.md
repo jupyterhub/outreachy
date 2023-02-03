@@ -1,3 +1,5 @@
+(comm-coord:become)=
+
 # Becoming an Outreachy Community Coordinator
 
 Any member of the JupyterHub community can offer to become a Community
