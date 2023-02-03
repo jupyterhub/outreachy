@@ -51,6 +51,8 @@ presented as a timeline over the course of an Outreachy round.
     [this template text](https://github.com/jupyterhub/outreachy/blob/HEAD/markdown-templates/call-to-action-contribution-period.md)
     to make posts on [Discourse](https://discourse.jupyter.org) and the
     [Team Compass](https://github.com/jupyterhub/team-compass)
+- Ensure all mentors and community volunteers are added to the appropriate
+  communication channels
 
 ### During the contribution period
 
