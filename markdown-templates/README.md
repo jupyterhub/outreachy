@@ -13,3 +13,6 @@ Topics of the templates included here cover:
     ([Read up on this functionality](https://hackmd.io/c/tutorials/%2Fs%2Flink-with-github))
 - A template email to send to the interns before their first week with instructions
   on setting up their mentor meetings
+- Templates for running cohort calls
+  - Also available on HackMD at <https://hackmd.io/@sgibson91/jupyterhub-outreachy-cohort-call-1-template>
+  - Also editable on HackMD and synced to this GitHub repo [![hackmd-github-sync-badge](https://hackmd.io/ck2A9IfFTk2DZUHpui4SIA/badge)](https://hackmd.io/ck2A9IfFTk2DZUHpui4SIA) ([Read up on this functionality](https://hackmd.io/c/tutorials/%2Fs%2Flink-with-github))
