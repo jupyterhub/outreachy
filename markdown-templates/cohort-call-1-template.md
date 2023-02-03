@@ -6,10 +6,11 @@ tags: outreachy, cohort-call, template
 
 :::info
 **Call info:**
+
 - Time/date: {{insert date and time here}}
-    - Your timezone: {{insert and arewemeetingyet.com link here}}
+  - Your timezone: {{insert and arewemeetingyet.com link here}}
 - Video conference link: {{insert a link to a video conferencing platform here}}
-:::
+  :::
 
 ## Joining the call / Roll call
 
@@ -27,10 +28,10 @@ Once you've joined the call:
 ## Code of Conduct
 
 :::info
+
 - Code of Conduct: https://jupyter.org/governance/conduct/code_of_conduct.html
-- Generally, treat others with kindness and respect, no matter who they are.
-    - We know you do this already!
-:::
+- Generally, treat others with kindness and respect, no matter who they are. - We know you do this already!
+  :::
 
 ## What is a Cohort Call?
 
@@ -42,18 +43,18 @@ Once you've joined the call:
 Quick into for each intern and project. Share your plans with each other! Feel free to add questions! _(1-2 mins per intern, 10 mins total)_
 
 - [name=Name] / Project
-    - Share something here!
+  - Share something here!
 - [name=Name] / Project
-    - Share something here!
+  - Share something here!
 - [name=Name] / Project
-    - Share something here!
+  - Share something here!
 
 ## Working practices over the next few months
 
 _(~5 mins)_
 
 - When in doubt, ask your mentors!
-    - This applies to _anything_ from technical assistance to blogging or worries about evaluation
+  - This applies to _anything_ from technical assistance to blogging or worries about evaluation
 - If your mentor is not available or responsive, you can always approach **Sarah Gibson** as Community Coordinator, or any of the other mentors if needed. We'll help redirect you to the correct person if we can't help.
 - Updates: Make sure your mentor knows you're alive and busy!
 - Exams, assignments, feeling unwell, vacation coming up? Tell your mentor so they don't think you've disappeared!
@@ -66,13 +67,13 @@ _(Break-out rooms, 3-4 people per room, ~15 mins to discuss + 10 mins follow up)
 ### 💬 What makes a project good?
 
 - **When things are a train-wreck:** Think of a time when you tried to use or contribute to an open source project and things didn't go all that well. What was the reason for this? Was there anything that could have been done better, and why? Perhaps this was community, documentation, code quality, or something else. Discuss in your groups and add your thoughts to the bullet points below. Add more bullets if needed.
-    - Write an answer here
-    - Write an answer here
-    - Write an answer here
+  - Write an answer here
+  - Write an answer here
+  - Write an answer here
 - **Now let's focus on the positive:** Think of a time when you used or contributed to an open source project and things went really smoothly. What things did you really value or appreciate? Discuss in your groups and add your thoughts to the bullet points below. Add more bullet points if needed.
-    - Write an answer here
-    - Write an answer here
-    - Write an answer here
+  - Write an answer here
+  - Write an answer here
+  - Write an answer here
 
 **Open Q&A:**
 
