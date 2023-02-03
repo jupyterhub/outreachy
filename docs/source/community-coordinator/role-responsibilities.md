@@ -26,6 +26,8 @@ presented as a timeline over the course of an Outreachy round.
 - Recruit volunteers to mentor and help them shape project proposals where
   necessary
 - [Register the community to participate in Outreachy](https://www.outreachy.org/communities/cfp/)
+- Ensure all mentors have write access to the
+  [`jupyterhub/outreachy` repo](https://github.com/jupyterhub/outreachy)
 
 ### Approving mentors and projects
 
