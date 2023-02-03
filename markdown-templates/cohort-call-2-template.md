@@ -7,8 +7,9 @@ tags: outreachy, cohort-call, template
 :::info
 
 **Call info:**
+
 - Time/date: {{insert date and time here}}
-    - Your timezone: {{insert an arewemeetingyet.com link here}}
+  - Your timezone: {{insert an arewemeetingyet.com link here}}
 - Video conference link: {{insert link to a video conferencing platform here}}
 
 :::
@@ -29,9 +30,10 @@ Once you've joined the call:
 ## Code of Conduct
 
 :::info
+
 - Code of Conduct: https://jupyter.org/governance/conduct/code_of_conduct.html
 - Generally, treat others with kindness and respect, no matter who they are.
-    - We know you do this already!
+  - We know you do this already!
 
 :::
 
@@ -40,11 +42,11 @@ Once you've joined the call:
 What have you worked on so far? Is there help from another intern you'd like to ask for?
 
 - [name=Name] / Project
-    - Write an update here
+  - Write an update here
 - [name=Name] / Project
-    - Write an update here
+  - Write an update here
 - [name=Name] / Project
-    - Write an update here
+  - Write an update here
 
 ## What makes code "good" or "bad"?
 
@@ -58,29 +60,28 @@ Think back to the last group call where we made a list of good open source pract
 - write something here
 - write something here
 
-### :pencil2: Things that make a code repo really easy to work with, update, run :ok_hand: 
+### :pencil2: Things that make a code repo really easy to work with, update, run :ok_hand:
 
 - write something here
 - write something here
 - write something here
-
 
 ## :speech_balloon: Breakout rooms: Code review practice
 
 We'll start by reviewing code that isn't written by anyone in the group. _(15 mins)_
 
 - **Thinking:** _(3 mins)_
-    - Pick **one** of these repos:
-        - https://github.com/madetech/sensible_logging
-        - https://github.com/taverna/taverna-svn
-        - https://github.com/biopython/biopython
-        - https://github.com/mozilla/jschannel
-    - Spend a couple of minutes looking through your chosen repo. Note down 2-3 points each for:
-        - Things that could be improved
-        - Good quality code
+  - Pick **one** of these repos:
+    - https://github.com/madetech/sensible_logging
+    - https://github.com/taverna/taverna-svn
+    - https://github.com/biopython/biopython
+    - https://github.com/mozilla/jschannel
+  - Spend a couple of minutes looking through your chosen repo. Note down 2-3 points each for:
+    - Things that could be improved
+    - Good quality code
 - **Sharing:** _(3 mins per person)_
-    - Share one good thing and one thing that could be improved with your group. Try to bring something new that wasn't discussed before!
-    - Did the group agree with your assessment? Discuss.
+  - Share one good thing and one thing that could be improved with your group. Try to bring something new that wasn't discussed before!
+  - Did the group agree with your assessment? Discuss.
 
 ### Giving Feedback
 
