@@ -59,3 +59,9 @@ whatever reason.
 
 You will need to submit a project proposal to the Outreachy platform to
 register and be approved as a mentor by the [Community Coordinator](comm-coord).
+
+## Past Outreachy Mentors
+
+```{include} ../tmp/mentors.txt
+
+```
