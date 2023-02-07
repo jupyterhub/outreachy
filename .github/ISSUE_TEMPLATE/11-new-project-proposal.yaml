@@ -1,0 +1,39 @@
+name: "Mentor: Propose a project for an Outreachy round"
+description: "Propose a project to submit to an Outreachy round and track its submission"
+title: "[Outreachy Project Proposal]: "
+labels:
+  - "status: scoping"
+  - "needs: mentor"
+  - "project-proposal"
+body:
+  - type: textarea
+    attributes:
+      label: Summary of Project
+      description: >-
+        Provide a short summary of the project idea
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: Will you mentor this project yourself?
+      description: >-
+        Are you able to mentor this project yourself, or is this project
+        available to other community members to mentor? If you will mentor this
+        project yourself, please remove the "needs: mentor" label from the
+        issue after creating it.
+      multiple: false
+      options:
+        - Yes, I can mentor this project myself
+        - No, this project is available for others to mentor.
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Link to scoping document for the proposal
+      description: >-
+        Please provide a link to a HackMD, Google doc, or similar where you are
+        scoping and preparing the project for submission. You can use
+        [this template](https://hackmd.io/@sgibson91/outreachy-project-proposal-template)
+        to prepare your submission to the Outreachy platform.
+    validations:
+      required: false
