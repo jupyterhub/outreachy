@@ -6,6 +6,7 @@ mentor during an Outreachy round.
 ```{toctree}
 :maxdepth: 2
 become-mentor
+project-list
 contribution-period/index
 application-review
 during
