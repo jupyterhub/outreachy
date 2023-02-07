@@ -76,8 +76,8 @@ following actions should be taken:
 2. If you are the original proposer and you have capacity to mentor in the next
    round, notify your [Community Coordinator](comm-coord) that you will be
    resubmitting the proposal
-3. If you **do not** have capacity to mentor the next round, add the `needs:
-   mentor` label to indicate that the proposal is available to be claimed
+3. If you **do not** have capacity to mentor the next round, add the
+   `needs: mentor` label to indicate that the proposal is available to be claimed
 
 (proposing-projects:co-mentors)=
 
