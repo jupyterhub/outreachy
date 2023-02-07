@@ -32,9 +32,47 @@
               "required": ["name", "github_handle"]
             }
           ]
+        },
+        "mentors": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": "The mentor's name"
+                },
+                "github_handle": {
+                  "type": "string",
+                  "description": "The mentor's GitHub handle, without leading @"
+                }
+              },
+              "required": ["name", "github_handle"]
+            }
+          ]
+        },
+        "community_coordinators": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": "The Community Coordinator's name"
+                },
+                "github_handle": {
+                  "type": "string",
+                  "description": "The Community Coordinator's GitHub handle, without leading @"
+                }
+              },
+              "required": ["name", "github_handle"]
+            }
+          ]
         }
       },
-      "required": ["round", "interns"]
+      "required": ["round", "interns", "mentors", "community_coordinators"]
     }
   ]
 }
