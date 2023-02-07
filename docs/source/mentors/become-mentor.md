@@ -53,9 +53,12 @@ whatever reason.
 
 ## How to sign up to mentor
 
-```{seealso}
-[Outreachy's mentor sign-up process](https://www.outreachy.org/docs/community/#mentor-sign-up-process)
-```
+To register as a mentor, follow
+[Outreachy's mentor sign-up process](https://www.outreachy.org/docs/community/#mentor-sign-up-process). You will need to submit a project proposal to the
+Outreachy platform to register and be approved as a mentor by the
+[Community Coordinator](comm-coord).
 
-You will need to submit a project proposal to the Outreachy platform to
-register and be approved as a mentor by the [Community Coordinator](comm-coord).
+```{seealso}
+See the [](project-list) for suggested projects looking for a mentor, or
+propose your own!
+```
