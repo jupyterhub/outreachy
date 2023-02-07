@@ -25,3 +25,9 @@ When a new Coordinator joins, existing Coordinators may take the opportunity to
 step down from the role. This is encouraged, especially if that person has
 coordinated many rounds!
 ```
+
+## Past Community Coordinators
+
+```{include} ../tmp/community_coordinators.txt
+
+```

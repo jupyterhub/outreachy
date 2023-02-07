@@ -102,4 +102,6 @@ if READTHEDOCS:
     subprocess.run([sys.executable, "_data/get_issues/get-repo-issues.py"], check=True)
 
 # Generate tables of Outreachy interns per cohort
-subprocess.run(["python", "_data/outreachy_interns/outreachy_interns.py"], check=True)
+subprocess.run(
+    ["python", "_data/outreachy_participants/outreachy_participants.py"], check=True
+)

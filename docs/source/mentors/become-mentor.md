@@ -62,3 +62,9 @@ Outreachy platform to register and be approved as a mentor by the
 See the [](project-list) for suggested projects looking for a mentor, or
 propose your own!
 ```
+
+## Past Outreachy Mentors
+
+```{include} ../tmp/mentors.txt
+
+```
