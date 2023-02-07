@@ -6,84 +6,85 @@ from textwrap import dedent
 import jsonschema
 from jsonschema import validate
 
-# Set filepath to interns data file
+# Set filepath to participants data file
 data_path = Path(__file__).resolve().parent
-interns_data_file = data_path.joinpath("outreachy_interns.json")
-interns_schema_file = data_path.joinpath("outreachy_interns.schema.json")
+participants_data_file = data_path.joinpath("participants.json")
+participants_schema_file = data_path.joinpath("participants.schema.json")
 
 # Set path to save output file in. Create a tmp dir if it doesn't exist.
 docs_path = data_path.parent.parent
 tmp_path = docs_path.joinpath("tmp")
 tmp_path.mkdir(exist_ok=True)
-output_path = tmp_path.joinpath("outreachy_interns.txt")
 
-# Read in json defining Outreachy interns
-with open(interns_data_file) as f:
-    interns_data = json.load(f)
+# Read in json defining Outreachy participants
+with open(participants_data_file) as f:
+    participants_data = json.load(f)
 
 # Read in the JSON schema file
-with open(interns_schema_file) as f:
-    interns_schema = json.load(f)
+with open(participants_schema_file) as f:
+    participants_schema = json.load(f)
 
 # Validate the data against the schema
 try:
-    validate(interns_data, interns_schema)
+    validate(participants_data, participants_schema)
 except jsonschema.exceptions.ValidationError as err:
     raise err
 
 # Sort cohorts in reverse chronological order
-interns_data = sorted(
-    interns_data,
+participants_data = sorted(
+    participants_data,
     key=lambda x: datetime.strptime(x["round"], "%B, %Y").strftime("%Y-%m"),
     reverse=True,
 )
 
-markdown = ""
+for role in ["interns", "mentors", "community_coordinators"]:
+    output_path = tmp_path.joinpath(f"{role}.txt")
+    markdown = ""
 
-for cohort in interns_data:
-    # Sort interns into alphabetical order
-    cohort["interns"] = sorted(cohort["interns"], key=lambda x: x["name"])
+    for participants in participants_data:
+        # Sort participants into alphabetical order
+        participants[role] = sorted(participants[role], key=lambda x: x["name"])
 
-    # Begin MyST definition of grid with cards
-    grid_md = dedent(
-        """
-        `````{{grid}} 1 2 3 3
-        :gutter: 3
-        :class-container: contributor-grid
+        # Begin MyST definition of grid with cards
+        grid_md = dedent(
+            """
+            `````{{grid}} 1 2 3 3
+            :gutter: 3
+            :class-container: contributor-grid
 
-        {card_md}
-        `````
-    """
-    )
-
-    # Add cards to the grid for each intern
-    card_md = ""
-    for intern in cohort["interns"]:
-        card_md += dedent(
-            f"""
-            ````{{grid-item-card}}
-            :class-header: bg-light
-            :text-align: center
-
-            **{intern['name']}**
-
-            ^^^
-
-            ```{{image}} https://github.com/{intern['github_handle']}.png?size=125
-            ```
-
-            [@{intern['github_handle']}](https://github.com/{intern['github_handle']})
-
-            +++
-            {f"[Read their blog!]({intern['blog_url']})" if "blog_url" in intern.keys() else ""}
-            ````
+            {card_md}
+            `````
         """
         )
 
-    # Add the markdown for the sphinx design cards into the grid and add cohort
-    # year as title
-    grid_md = grid_md.format(card_md=card_md)
-    final_md = f"### {cohort['round']}\n" + grid_md
-    markdown += final_md
+        # Add cards to the grid for each participant
+        card_md = ""
+        for person in participants[role]:
+            card_md += dedent(
+                f"""
+                ````{{grid-item-card}}
+                :class-header: bg-light
+                :text-align: center
 
-output_path.write_text(markdown + "\n")
+                **{person['name']}**
+
+                ^^^
+
+                ```{{image}} https://github.com/{person['github_handle']}.png?size=125
+                ```
+
+                [@{person['github_handle']}](https://github.com/{person['github_handle']})
+
+                +++
+                {f"[Read their blog!]({person['blog_url']})" if "blog_url" in person.keys() else ""}
+                ````
+            """
+            )
+
+        # Add the markdown for the sphinx design cards into the grid and add
+        # cohort year as title
+        grid_md = grid_md.format(card_md=card_md)
+        final_md = f"### {participants['round']}\n" + grid_md
+        markdown += final_md
+
+    output_path.write_text(markdown + "\n")
