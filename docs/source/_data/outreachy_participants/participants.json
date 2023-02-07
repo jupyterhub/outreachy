@@ -17,6 +17,26 @@
         "github_handle": "bl-aire",
         "blog_url": "https://blaire.hashnode.dev/"
       }
+    ],
+    "mentors": [
+      {
+        "name": "Min Ragan-Kelley",
+        "github_handle": "minrk"
+      },
+      {
+        "name": "Georgiana Dolocon",
+        "github_handle": "GeorgianaElena"
+      },
+      {
+        "name": "Sarah Gibson",
+        "github_handle": "sgibson91"
+      }
+    ],
+    "community_coordinators": [
+      {
+        "name": "Sarah Gibson",
+        "github_handle": "sgibson91"
+      }
     ]
   },
   {
@@ -29,6 +49,22 @@
       {
         "name": "Leticia Portella",
         "github_handle": "leportella"
+      }
+    ],
+    "mentors": [
+      {
+        "name": "Min Ragan-Kelley",
+        "github_handle": "minrk"
+      },
+      {
+        "name": "Yuvi Panda",
+        "github_handle": "yuvipanda"
+      }
+    ],
+    "community_coordinators": [
+      {
+        "name": "Yuvi Panda",
+        "github_handle": "yuvipanda"
       }
     ]
   }
