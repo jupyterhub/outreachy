@@ -101,5 +101,52 @@ def get_microtask_issues(
     df.to_csv(path_table, index=None)
 
 
+def get_project_proposal_issues(
+    full_repo_name: str = "jupyterhub/outreachy",
+    issue_labels: List[str] = ["project-proposal"],
+):
+    # Set the HTTP headers
+    headers = {"Accept": "application/vnd.github+json"}
+
+    # Set the query parameters
+    params = {
+        "labels": issue_labels,
+        "state": "open",
+    }
+
+    issues = []
+    for page in get_repo_issues(full_repo_name, headers=headers, params=params):
+        issues.extend(page.json())
+
+    issue_list = []
+    for i, issue in enumerate(issues):
+        labels = [label["name"] for label in issue["labels"]]
+
+        status_label = next(
+            (label for label in labels if label.startswith("status:")),
+            None,
+        )
+        if status_label is not None:
+            status_label = f"![GitHub labels](https://img.shields.io/github/labels/{full_repo_name}/{status_label.replace(' ', '%20')})"
+
+        needs_mentor = "Yes" if "needs: mentor" in labels else "No"
+
+        issue_list.append(
+            {
+                "Title": f"[{issue['title']}]({issue['html_url']})",
+                "Status": status_label,
+                "Looking for a Mentor?": needs_mentor,
+            }
+        )
+
+    # Convert list to dataframe
+    df = pd.DataFrame(issue_list)
+
+    # Write the dataframe to a CSV file that can be read by sphinx
+    path_table = PATH_TMP.joinpath("project-table.csv")
+    df.to_csv(path_table, index=None)
+
+
 if __name__ == "__main__":
-    get_microtask_issues()
+    # get_microtask_issues()
+    get_project_proposal_issues()
