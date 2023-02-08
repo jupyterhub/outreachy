@@ -66,6 +66,18 @@ html_theme = "pydata_sphinx_theme"
 html_theme_options = {
     "github_url": "https://github.com/jupyterhub/outreachy/",
     "use_edit_page_button": True,
+    "icon_links": [
+        {
+            "name": "Discourse",
+            "url": "https://discourse.jupyter.org/c/jupyterhub",
+            "icon": "fab fa-discourse",
+        },
+        {
+            "name": "Gitter",
+            "url": "https://gitter.im/jupyterhub/jupyterhub",
+            "icon": "fab fa-gitter",
+        },
+    ],
 }
 html_context = {
     "github_user": "jupyterhub",
