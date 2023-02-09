@@ -85,13 +85,13 @@ If a project proposal was unsuccessful in finding a suitable intern, the
 following actions should be taken:
 
 1. Add the `status: no intern found` label to the issue
-2. If you are the original proposer and you have capacity to mentor in the next
-   round, notify your [Community Coordinator](comm-coord) that you will be
-   resubmitting the proposal
-3. If you **do not** have capacity to mentor the next round, add the
-   `needs: mentor` label to indicate that the proposal is available to be claimed
-
-(proposing-projects:co-mentors)=
+2. There are then two pathways:
+   - If you are the original proposer and you **do** have capacity to mentor in
+     the next round, notify your [Community Coordinator](comm-coord) that you
+     will be resubmitting the proposal
+   - If you **do not** have capacity to mentor the next round, add the
+     `needs: mentor` label to indicate that the proposal is available to be
+     claimed
 
 ## Assigning a co-mentor
 
