@@ -94,3 +94,9 @@ following actions should be taken:
 (proposing-projects:co-mentors)=
 
 ## Assigning a co-mentor
+
+Once you have submitted your project, you can invite someone to be a co-mentor
+with you. They will receive an email invitation to create an Outreachy account
+and accept co-mentoring responsibilities.
+[Co-mentoring is encouraged](mentor:become:pair) to spread the responsibility
+and guide newer mentors into the role.
