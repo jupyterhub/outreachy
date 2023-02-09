@@ -1,3 +1,5 @@
+(mentor:become)=
+
 # Become a Mentor
 
 This section outlines the benefits of becoming a mentor as well as the
@@ -43,6 +45,8 @@ The main expectations of mentors are:
 - Mentor the intern through your proposed project for the 13 week internship
   duration
 - Provide feedback to Outreachy regarding the intern's performance
+
+(mentor:become:pair)=
 
 ## Pair mentoring
 
