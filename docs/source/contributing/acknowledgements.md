@@ -16,7 +16,7 @@ in Outreachy, without necessarily taking on an "Outreachy role" themselves.
 ^^^
 ```{image} https://github.com/choldgraf.png?size=125
 ```
-[@choldgraf](https://github.com/cholgraf)
+[@choldgraf](https://github.com/choldgraf)
 +++
 grant writing
 ````
