@@ -2,6 +2,9 @@
 
 # Proposing an Outreachy Project
 
+This section documents the process of proposing and submitting projects for
+Outreachy rounds.
+
 ## Who can submit a project proposal
 
 Anyone in the JupyterHub community can submit a project proposal by following
@@ -19,6 +22,19 @@ You can view the [](project-list)
 (proposing-projects:process)=
 
 ## Project proposal and scoping process
+
+If you have an idea for an Outreachy project, you can open a scoping issue
+using the
+["Propose a Project for an Outreachy round" issue form](https://github.com/jupyterhub/outreachy/issues/new?assignees=&labels=status%3A+scoping%2Cneeds%3A+mentor%2Cproject-proposal&template=11-new-project-proposal.yaml&title=%5BOutreachy+Project+Proposal%5D%3A+).
+Opening an issue allows it to be compiled into our [](project-list).
+
+The issue for will ask for a short summary of the project idea, whether or not
+you have capacity to mentor the project yourself or if someone else can claim
+it, and a link to a collaborative document where you are scoping the proposal.
+You can populate the document from
+[this template](https://hackmd.io/@sgibson91/outreachy-project-proposal-template)
+which duplicates the Outreachy project submission form. The issue can then be
+used to request feedback on the proposal, or coordinate with co-mentors.
 
 (proposing-projects:labels)=
 
@@ -100,3 +116,8 @@ with you. They will receive an email invitation to create an Outreachy account
 and accept co-mentoring responsibilities.
 [Co-mentoring is encouraged](mentor:become:pair) to spread the responsibility
 and guide newer mentors into the role.
+
+## Closing project proposal issues
+
+Once an intern has been selected for the project, it's proposal issue can be
+closed.
