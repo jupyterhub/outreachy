@@ -67,6 +67,18 @@ If you would like to claim a project proposal that is looking for a mentor:
 
 ## Submitting the project to the Outreachy platform
 
+Once you're happy with the abstract and details for your project proposal,
+feel free to
+[create an account on the Outreachy platform](https://www.outreachy.org/register/?next=/)
+and submit your proposal. It will then be approved by the Community Coordinator,
+and you can begin preparations for [](contribution-period).
+
+```{attention}
+There will be a specific link for mentor sign-up once the community is
+registered to participate. Your [Community Coordinator](comm-coord) should be
+able to share this link with you.
+```
+
 ### Resubmitting an unsuccessful project proposal
 
 If a project proposal was unsuccessful in finding a suitable intern, the
