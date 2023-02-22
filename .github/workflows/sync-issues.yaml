@@ -29,6 +29,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: EndBug/add-and-commit@v9
         with:
-          add: "microtask-table.csv project-table.csv"
+          add: "--force microtask-table.csv project-table.csv"
           message: "Update tables of issues"
           new_branch: "issue-data"
