@@ -17,7 +17,6 @@
 # -- Project specific imports ------------------------------------------------
 
 import datetime
-import sys
 
 # -- Project information -----------------------------------------------------
 
@@ -104,14 +103,7 @@ html_static_path = ["_static"]
 linkcheck_ignore = ["https://www.outreachy.org/docs/community/#", "(.*)?README.md#"]
 
 # -- Custom scripts ----------------------------------------------------------
-import os  # noqa: E402
 import subprocess  # noqa: E402
-
-# This script makes calls to the GitHub API, so only run it inside ReadTheDocs
-READTHEDOCS = os.environ.get("READTHEDOCS", False)
-if READTHEDOCS:
-    # Generate tables of issues
-    subprocess.run([sys.executable, "_data/get_issues/get-repo-issues.py"], check=True)
 
 # Generate tables of Outreachy interns per cohort
 subprocess.run(

@@ -1,12 +1,34 @@
+import os
 from pathlib import Path
 from typing import List
 
 import pandas as pd
 import requests
 
-PATH_ROOT = Path(__file__).parent.parent.parent
-PATH_TMP = PATH_ROOT.joinpath("tmp")
-PATH_TMP.mkdir(exist_ok=True)
+PATH = Path(__file__).parent.parent
+
+
+def get_github_token():
+    """If a GITHUB_TOKEN environment variable exists, return its value. Else
+    return None.
+    """
+    return os.environ.get("GITHUB_TOKEN", None)
+
+
+def set_http_headers():
+    """Set headers for HTTP requests against GitHub's REST API"""
+    # Set the HTTP headers
+    headers = {
+        "Accept": "application/vnd.github+json",
+        "X-GitHub-Api-Version": "2022-11-28",
+    }
+
+    # See if there's a GitHub token in the environment and add it to the headers
+    token = get_github_token()
+    if token is not None:
+        headers["Authorization"] = f"Bearer {token}"
+
+    return headers
 
 
 def get_next_page(page):
@@ -52,7 +74,7 @@ def get_microtask_issues(
     issue_labels: List[str] = ["microtask"],
 ):
     # Set the HTTP headers
-    headers = {"Accept": "application/vnd.github+json"}
+    headers = set_http_headers()
 
     # Set the query parameters
     params = {
@@ -97,7 +119,7 @@ def get_microtask_issues(
     df = pd.DataFrame(issue_list)
 
     # Write the dataframe to a CSV file that can be read by sphinx
-    path_table = PATH_TMP.joinpath("microtask-table.csv")
+    path_table = PATH.joinpath("microtask-table.csv")
     df.to_csv(path_table, index=None)
 
 
@@ -106,7 +128,7 @@ def get_project_proposal_issues(
     issue_labels: List[str] = ["project-proposal"],
 ):
     # Set the HTTP headers
-    headers = {"Accept": "application/vnd.github+json"}
+    headers = set_http_headers()
 
     # Set the query parameters
     params = {
@@ -143,10 +165,10 @@ def get_project_proposal_issues(
     df = pd.DataFrame(issue_list)
 
     # Write the dataframe to a CSV file that can be read by sphinx
-    path_table = PATH_TMP.joinpath("project-table.csv")
+    path_table = PATH.joinpath("project-table.csv")
     df.to_csv(path_table, index=None)
 
 
 if __name__ == "__main__":
-    # get_microtask_issues()
+    get_microtask_issues()
     get_project_proposal_issues()
