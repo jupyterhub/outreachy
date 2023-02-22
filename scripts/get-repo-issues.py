@@ -27,7 +27,7 @@ def set_http_headers():
     token = get_github_token()
     if token is not None:
         headers["Authorization"] = f"Bearer {token}"
-    
+
     return headers
 
 

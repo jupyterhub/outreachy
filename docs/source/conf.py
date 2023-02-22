@@ -17,7 +17,6 @@
 # -- Project specific imports ------------------------------------------------
 
 import datetime
-import sys
 
 # -- Project information -----------------------------------------------------
 
