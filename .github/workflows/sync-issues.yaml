@@ -21,15 +21,14 @@ jobs:
         with:
           python-version: "3.10"
       - run: |
+          pip install -U pip
           pip install -r scripts/requirements.txt
       - working-directory: scripts
         run: python get-repo-issues.py
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: github-actions-x/commit@v2.9
+      - uses: EndBug/add-and-commit@v9
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          push-branch: "issue-data"
-          commit-message: "Update tables of issues"
-          force-add: "true"
-          files: microtask-table.csv project-table.csv
+          add: "--force microtask-table.csv project-table.csv"
+          message: "Update tables of issues"
+          new_branch: "issue-data"
