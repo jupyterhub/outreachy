@@ -4,9 +4,7 @@ from typing import List
 import pandas as pd
 import requests
 
-PATH_ROOT = Path(__file__).parent.parent.parent
-PATH_TMP = PATH_ROOT.joinpath("tmp")
-PATH_TMP.mkdir(exist_ok=True)
+PATH = Path(__file__).parent.parent
 
 
 def get_next_page(page):
@@ -97,7 +95,7 @@ def get_microtask_issues(
     df = pd.DataFrame(issue_list)
 
     # Write the dataframe to a CSV file that can be read by sphinx
-    path_table = PATH_TMP.joinpath("microtask-table.csv")
+    path_table = PATH.joinpath("microtask-table.csv")
     df.to_csv(path_table, index=None)
 
 
@@ -143,10 +141,10 @@ def get_project_proposal_issues(
     df = pd.DataFrame(issue_list)
 
     # Write the dataframe to a CSV file that can be read by sphinx
-    path_table = PATH_TMP.joinpath("project-table.csv")
+    path_table = PATH.joinpath("project-table.csv")
     df.to_csv(path_table, index=None)
 
 
 if __name__ == "__main__":
-    # get_microtask_issues()
+    get_microtask_issues()
     get_project_proposal_issues()
