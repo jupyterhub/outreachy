@@ -25,7 +25,7 @@ jobs:
         run: python get-repo-issues.py
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: github-actions-x/commit@v2
+      - uses: github-actions-x/commit@v2.9
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           push-branch: "issue-data"
