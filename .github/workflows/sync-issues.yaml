@@ -23,7 +23,8 @@ jobs:
           pip install -r scripts/requirements.txt
       - working-directory: scripts
         run: python get-repo-issues.py
-        env: GITHUB_TOKEN = ${{ secrets.GITHUB_TOKEN }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: github-actions-x/commit@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
