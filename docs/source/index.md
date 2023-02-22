@@ -26,3 +26,10 @@ interns/index
 :maxdepth: 2
 community-coordinator/index
 ```
+
+## Contributing
+
+```{toctree}
+:maxdepth: 2
+contributing/acknowledgements
+```
