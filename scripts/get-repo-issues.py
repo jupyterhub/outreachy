@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 from typing import List
 
@@ -5,6 +6,29 @@ import pandas as pd
 import requests
 
 PATH = Path(__file__).parent.parent
+
+
+def get_github_token():
+    """If a GITHUB_TOKEN environment variable exists, return its value. Else
+    return None.
+    """
+    return os.environ.get("GITHUB_TOKEN", None)
+
+
+def set_http_headers():
+    """Set headers for HTTP requests against GitHub's REST API"""
+    # Set the HTTP headers
+    headers = {
+        "Accept": "application/vnd.github+json",
+        "X-GitHub-Api-Version": "2022-11-28",
+    }
+
+    # See if there's a GitHub token in the environment and add it to the headers
+    token = get_github_token()
+    if token is not None:
+        headers["Authorization"] = f"Bearer {token}"
+    
+    return headers
 
 
 def get_next_page(page):
@@ -50,7 +74,7 @@ def get_microtask_issues(
     issue_labels: List[str] = ["microtask"],
 ):
     # Set the HTTP headers
-    headers = {"Accept": "application/vnd.github+json"}
+    headers = set_http_headers()
 
     # Set the query parameters
     params = {
@@ -104,7 +128,7 @@ def get_project_proposal_issues(
     issue_labels: List[str] = ["project-proposal"],
 ):
     # Set the HTTP headers
-    headers = {"Accept": "application/vnd.github+json"}
+    headers = set_http_headers()
 
     # Set the query parameters
     params = {
