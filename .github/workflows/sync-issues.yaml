@@ -27,15 +27,8 @@ jobs:
         run: python get-repo-issues.py
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      # - uses: github-actions-x/commit@v2.9
-      #   with:
-      #     github-token: ${{ secrets.GITHUB_TOKEN }}
-      #     push-branch: "issue-data"
-      #     commit-message: "Update tables of issues"
-      #     force-add: "true"
-      #     files: microtask-table.csv project-table.csv
-      - run: |
-          git switch issue-data
-          git add microtask-table.csv project-table.csv
-          git commit -m "Update tables of issues"
-          git push
+      - uses: EndBug/add-and-commit@v9
+        with:
+          add: "microtask-table.csv project-table.csv"
+          message: "Update tables of issues"
+          new_branch: "issue-data"
