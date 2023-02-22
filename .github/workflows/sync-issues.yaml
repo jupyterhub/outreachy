@@ -1,0 +1,34 @@
+name: Sync GitHub Issues
+
+on:
+  issues:
+    types:
+      - opened
+      - closed
+      - labeled
+      - unlabeled
+  workflow_dispatch:
+
+jobs:
+  sync-issues:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: read
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+      - run: |
+          pip install -r scripts/requirements.txt
+      - working-directory: scripts
+        run: python get-repo-issues.py
+        env:
+          GITHUB_TOKEN = ${{ secrets.GITHUB_TOKEN }}
+      - uses: github-actions-x/commit@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          push-branch: 'issue-data'
+          commit-message: 'Update tables of issues'
+          force-add: 'true'
+          files: microtask-table.csv project-table.csv
