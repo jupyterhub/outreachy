@@ -23,11 +23,11 @@ contribution period closes.
 
 ### Closing issues
 
-We have a provided a [short Python script](https://github.com/jupyterhub/outreachy/blob/HEAD/helper-scripts/comment-close-issues.py)
+We have a provided a [short Python script](https://github.com/jupyterhub/outreachy/blob/HEAD/scripts/comment-close-issues.py)
 that identifies Outreachy-related issues based on labels. It leaves a short
 message thanking the contributors for their work, and then closes each issue in
 turn. This is a bit quicker than doing it manually. You can read how to use
-this script in the [README file for helper scripts](https://github.com/jupyterhub/outreachy/blob/HEAD/helper-scripts/README.md#closing-microtask-issues-after-the-contribution-period-has-closed).
+this script in the [README file for the `scripts` folder](https://github.com/jupyterhub/outreachy/blob/HEAD/scripts/README.md#closing-microtask-issues-after-the-contribution-period-has-closed).
 
 ### Closing/merging pull requests
 
