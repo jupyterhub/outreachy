@@ -19,7 +19,7 @@ whether the project needs a mentor to steward it.
 
 ```{csv-table}
 :header-rows: 1
-:file: ../tmp/project-table.csv
+:url: https://raw.githubusercontent.com/jupyterhub/outreachy/issue-data/project-table.csv
 ```
 
 </div>

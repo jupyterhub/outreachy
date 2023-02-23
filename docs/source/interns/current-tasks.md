@@ -21,7 +21,7 @@ the difficulty level of the task.
 
 ```{csv-table}
 :header-rows: 1
-:file: ../tmp/microtask-table.csv
+:url: https://raw.githubusercontent.com/jupyterhub/outreachy/issue-data/microtask-table.csv
 ```
 
 </div>
