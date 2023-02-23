@@ -23,8 +23,8 @@ presented as a timeline over the course of an Outreachy round.
 ### Before the round
 
 - Ensure that the community has [](funding) to support any interns (minimum one)
-- Recruit volunteers to mentor and help them shape project proposals where
-  necessary
+- Recruit volunteers to mentor and help them shape
+  [project proposals](proposing-projects) where necessary
 - [Register the community to participate in Outreachy](https://www.outreachy.org/communities/cfp/)
 - Ensure all mentors have write access to the
   [`jupyterhub/outreachy` repo](https://github.com/jupyterhub/outreachy)
@@ -100,4 +100,5 @@ presented as a timeline over the course of an Outreachy round.
 - Organise [honoraria for the mentors](funding:discretionary)
 - Request [testimonials from the interns](https://jupyterhub-outreachy.readthedocs.io/en/latest/interns/become.html)
   to place on the website
-- Add the interns to the list of past interns
+- Add folk who participated (interns, mentors and yourself!) to the lists of
+  previous participants
