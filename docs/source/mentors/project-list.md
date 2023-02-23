@@ -3,7 +3,7 @@ py-config:
   splashscreen:
     autoclose: true
   packages:
-  - pandas
+    - pandas
 ---
 
 (project-list)=
