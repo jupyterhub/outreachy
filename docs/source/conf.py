@@ -37,6 +37,7 @@ default_role = "literal"
 extensions = [
     "sphinx_copybutton",
     "sphinx_design",
+    "sphinx_pyscript",
     "myst_parser",
 ]
 
