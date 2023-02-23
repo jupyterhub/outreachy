@@ -9,6 +9,16 @@ on:
       - unlabeled
   workflow_dispatch:
 
+concurrency:
+  # If multiple issues are edited in quick succession, e.g. a PR closes multiple
+  # issues, this workflow will be triggered once *per event*, e.g. 2 issues
+  # closed = two workflow runs. In reality, we are interested in the most
+  # recent event since all previous events will be caught by the API calls in
+  # the script. Hence we use the concurrency of GitHub Actions to cancel in
+  # progress runs and default to the latest run.
+  group: issue-sync
+  cancel-in-progress: true
+
 jobs:
   sync-issues:
     runs-on: ubuntu-latest
