@@ -18,7 +18,8 @@ this.
 
 This table shows the project proposals currently open as issues on the repository,
 their status (whether they are being scoped, or have been submitted, etc), and
-whether the project needs a mentor to steward it.
+whether the project needs a mentor to steward it. Please read
+[](proposing-projects:labels) to understand the labels.
 
 <div class="full-width project-table">
 

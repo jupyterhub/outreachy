@@ -1,3 +1,5 @@
+(mentor:become)=
+
 # Become a Mentor
 
 This section outlines the benefits of becoming a mentor as well as the
@@ -44,6 +46,8 @@ The main expectations of mentors are:
   duration
 - Provide feedback to Outreachy regarding the intern's performance
 
+(mentor:become:pair)=
+
 ## Pair mentoring
 
 We strongly advocate for pair-mentoring a project where possible. This can
@@ -53,12 +57,15 @@ whatever reason.
 
 ## How to sign up to mentor
 
-```{seealso}
-[Outreachy's mentor sign-up process](https://www.outreachy.org/docs/community/#mentor-sign-up-process)
-```
+To register as a mentor, follow
+[Outreachy's mentor sign-up process](https://www.outreachy.org/docs/community/#mentor-sign-up-process). You will need to submit a project proposal to the
+Outreachy platform to register and be approved as a mentor by the
+[Community Coordinator](comm-coord).
 
-You will need to submit a project proposal to the Outreachy platform to
-register and be approved as a mentor by the [Community Coordinator](comm-coord).
+```{seealso}
+See the [](project-list) for suggested projects looking for a mentor, or
+propose your own!
+```
 
 ## Past Outreachy Mentors
 

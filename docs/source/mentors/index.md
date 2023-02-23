@@ -7,6 +7,7 @@ mentor during an Outreachy round.
 :maxdepth: 2
 become-mentor
 project-list
+project-proposals
 contribution-period/index
 application-review
 during
