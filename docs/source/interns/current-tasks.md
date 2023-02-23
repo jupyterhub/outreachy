@@ -20,7 +20,8 @@ This table shows the microtasks currently available to work on during a
 contribution period. The table contains a link to the issue describing the
 task, a label indicating which project it is connected to, an indication of
 how many applicants can work on the issue simultaneously, and a label indicating
-the difficulty level of the task.
+the difficulty level of the task. See [](microtasks:create:labels) for more
+details.
 
 <div class="full-width microtask-table">
 
