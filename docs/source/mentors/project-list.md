@@ -1,3 +1,11 @@
+---
+py-config:
+  splashscreen:
+    autoclose: true
+  packages:
+  - pandas
+---
+
 (project-list)=
 
 # List of Project Proposals
@@ -15,14 +23,16 @@ This table shows the project proposals currently open as issues on the repositor
 their status (whether they are being scoped, or have been submitted, etc), and
 whether the project needs a mentor to steward it.
 
-<div class="full-width project-table">
+```{py-script}
+import pandas as pd
+from pyodide.http import open_url
 
-```{csv-table}
-:header-rows: 1
-:file: ../tmp/project-table.csv
+data = pd.read_csv(open_url("https://raw.githubusercontent.com/jupyterhub/outreachy/issue-data/project-table.csv"))
+
+display(data, target="project-table", append=False)
 ```
 
-</div>
+<div id="project-table" class="full-width project-table"></div>
 
 % DataTables config to make the table above look nice
 % TODO: Figure out how to make this work nicely with dark theme
