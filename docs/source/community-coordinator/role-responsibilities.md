@@ -98,7 +98,7 @@ presented as a timeline over the course of an Outreachy round.
 ### After the internships
 
 - Organise [honoraria for the mentors](funding:discretionary)
-- Request [testimonials from the interns](https://jupyterhub-outreachy.readthedocs.io/en/latest/interns/become.html)
+- Request [testimonials from the interns](become-intern)
   to place on the website
 - Add folk who participated (interns, mentors and yourself!) to the lists of
   previous participants
