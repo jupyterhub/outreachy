@@ -7,7 +7,7 @@ import nox
 
 nox.options.reuse_existing_virtualenvs = True
 
-BUILD_COMMAND = ["-b", "html", "docs/source", "docs/_build/html"]
+BUILD_COMMAND = ["-b", "dirhtml", "docs/source", "docs/_build/dirhtml"]
 
 
 def install_deps(session):
