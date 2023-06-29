@@ -63,7 +63,7 @@ Outreachy platform to register and be approved as a mentor by the
 [Community Coordinator](comm-coord).
 
 ```{seealso}
-See the [](project-list) for suggested projects looking for a mentor, or
+See the [](list-of-projects) for suggested projects looking for a mentor, or
 propose your own!
 ```
 
