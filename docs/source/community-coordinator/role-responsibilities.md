@@ -22,7 +22,7 @@ presented as a timeline over the course of an Outreachy round.
 
 ### Before the round
 
-- Ensure that the community has [](funding) to support any interns (minimum one)
+- Ensure that the community has [](./funding.md) to support any interns (minimum one)
 - Recruit volunteers to mentor and help them shape
   [project proposals](proposing-projects) where necessary
 - [Register the community to participate in Outreachy](https://www.outreachy.org/communities/cfp/)
@@ -93,7 +93,7 @@ presented as a timeline over the course of an Outreachy round.
   - This can be [tracked in an issue](https://github.com/jupyterhub/outreachy/issues/146)
 - Be available to discuss any issues with mentors and/or interns and involve
   the Outreachy organisers if necessary
-- Optionally, run [](cohort-calls)
+- Optionally, run [](./cohort-calls.md)
 
 ### After the internships
 
