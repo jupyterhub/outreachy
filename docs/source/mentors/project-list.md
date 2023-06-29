@@ -6,7 +6,7 @@ py-config:
     - pandas
 ---
 
-(project-list)=
+(list-of-projects)=
 
 # List of Project Proposals
 

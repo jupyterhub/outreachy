@@ -16,7 +16,7 @@ Instead, we can hopefully generate a board of project ideas that can provide
 inspiration to those _who do_ have the capacity to mentor.
 
 ```{seealso}
-You can view the [](project-list)
+You can view the [](list-of-projects)
 ```
 
 (proposing-projects:process)=
@@ -26,7 +26,7 @@ You can view the [](project-list)
 If you have an idea for an Outreachy project, you can open a scoping issue
 using the
 ["Propose a Project for an Outreachy round" issue form](https://github.com/jupyterhub/outreachy/issues/new?assignees=&labels=status%3A+scoping%2Cneeds%3A+mentor%2Cproject-proposal&template=11-new-project-proposal.yaml&title=%5BOutreachy+Project+Proposal%5D%3A+).
-Opening an issue allows it to be compiled into our [](project-list).
+Opening an issue allows it to be compiled into our [](list-of-projects).
 
 The issue for will ask for a short summary of the project idea, whether or not
 you have capacity to mentor the project yourself or if someone else can claim
