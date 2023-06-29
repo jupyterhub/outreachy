@@ -55,6 +55,13 @@ root_doc = master_doc = "index"
 # The suffix(es) of source filenames.
 source_suffix = [".md", ".rst"]
 
+# -- MyST settings -----------------------------------------------------------
+
+myst_enable_extensions = [
+    "attrs_inline",
+    "attrs_block",
+]
+
 # -- Options for HTML output -------------------------------------------------
 # ref: https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
