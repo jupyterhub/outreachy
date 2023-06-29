@@ -32,7 +32,12 @@ Refresh the page to keep it up-to-date!
 import pandas as pd
 from pyodide.http import open_url
 
-data = pd.read_csv(open_url("https://raw.githubusercontent.com/jupyterhub/outreachy/issue-data/project-table.csv"))
+# Get the data
+data = pd.read_csv(
+    open_url(
+        "https://raw.githubusercontent.com/jupyterhub/outreachy/issue-data/project-table.csv"
+    )
+)
 
 # Function to display the table
 display(data.style.hide(axis="index"), target="project-table", append=False)
