@@ -11,6 +11,7 @@ Here are some testimonials from previous Outreachy interns who have worked with
 JupyterHub.
 
 {attribution="Sheila Kahwai, Dec 2022 intern"}
+
 > Participating in an Outreachy internship at Project JupyterHub was one of the
 > best decisions I've made for my career as a software developer. Working with
 > the JupyterHub community on Pytest JupyterHub taught me the importance of
@@ -22,6 +23,7 @@ JupyterHub.
 > JupyterHub provided me.
 
 {attribution="Alan Wasega, Dec 2022 intern"}
+
 > When I started my internship with JupyterHub, the last thing I expected was to
 > have a great time. In fact, I was very afraid: what if I fail? What if I am not
 > good enough and the mentors call me out, or worse, rate me poorly? What if...
@@ -40,6 +42,7 @@ JupyterHub.
 > experiences I had, and the people I met during this period.
 
 {attribution="Ogoh Blessing Onyowoicho, Dec 2022 intern"}
+
 > During a Coffee chat organised by Outreachy for the May cohort applicants, I
 > was asked to use three words to summarise my Outreachy experience using three
 > words. After thinking for a while, I had to resort to describing my experience
