@@ -149,13 +149,13 @@ def get_project_proposal_issues(
             None,
         )
         if status_label is not None:
-            status_label = f"![GitHub labels](https://img.shields.io/github/labels/{full_repo_name}/{status_label.replace(' ', '%20')})"
+            status_label = f'<img src="https://img.shields.io/github/labels/{full_repo_name}/{status_label.replace(" ", "%20")}">'
 
         needs_mentor = "Yes" if "needs: mentor" in labels else "No"
 
         issue_list.append(
             {
-                "Title": f"[{issue['title']}]({issue['html_url']})",
+                "Title": f'<a href="{issue["html_url"]}">{issue["title"]}</a>',
                 "Status": status_label,
                 "Looking for a Mentor?": needs_mentor,
             }
