@@ -51,6 +51,7 @@ jobs:
       - uses: EndBug/add-and-commit@v9
         with:
           cwd: ./issue-data
+          pull: '--rebase --autostash'
           add: "microtask-table.csv project-table.csv --force"
           message: "Update tables of issues"
           new_branch: "issue-data"
