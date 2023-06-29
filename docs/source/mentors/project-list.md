@@ -3,6 +3,7 @@ py-config:
   splashscreen:
     autoclose: true
   packages:
+    - jinja2
     - pandas
 ---
 
