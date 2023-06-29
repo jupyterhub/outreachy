@@ -95,18 +95,18 @@ def get_microtask_issues(
             None,
         )
         if project_label is not None:
-            project_label = f"![GitHub labels](https://img.shields.io/github/labels/{full_repo_name}/{project_label.replace(' ', '%20')})"
+            project_label = f'<img src="https://img.shields.io/github/labels/{full_repo_name}/{project_label.replace(" ", "%20")}">'
 
         level_label = next(
             (label for label in labels if label.startswith("level:")),
             None,
         )
         if level_label is not None:
-            level_label = f"![GitHub labels](https://img.shields.io/github/labels/{full_repo_name}/{level_label.replace(' ', '%20')})"
+            level_label = f'<img src="https://img.shields.io/github/labels/{full_repo_name}/{level_label.replace(" ", "%20")}">'
 
         issue_list.append(
             {
-                "Title": f"[{issue['title']}]({issue['html_url']})",
+                "Title": f'<a href="{issue["html_url"]}">{issue["title"]}</a>',
                 "Project": project_label,
                 "Multiple applicants permitted?": "Yes"
                 if "multiple" in labels
@@ -151,13 +151,11 @@ def get_project_proposal_issues(
         if status_label is not None:
             status_label = f'<img src="https://img.shields.io/github/labels/{full_repo_name}/{status_label.replace(" ", "%20")}">'
 
-        needs_mentor = "Yes" if "needs: mentor" in labels else "No"
-
         issue_list.append(
             {
                 "Title": f'<a href="{issue["html_url"]}">{issue["title"]}</a>',
                 "Status": status_label,
-                "Looking for a Mentor?": needs_mentor,
+                "Looking for a Mentor?": "Yes" if "needs: mentor" in labels else "No",
             }
         )
 
