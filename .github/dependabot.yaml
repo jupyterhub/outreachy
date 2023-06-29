@@ -1,8 +1,10 @@
 version: 2
 updates:
-  # Maintain dependencies for GitHub Actions
-  - package-ecosystem: "github-actions"
-    directory: "/"
+  # Maintain dependencies in our GitHub Workflows
+  - package-ecosystem: github-actions
+    directory: /
+    labels: [ci]
     schedule:
-      # Check for updates once a week. By default, this check happens on a Monday.
-      interval: "weekly"
+      interval: monthly
+      time: "05:00"
+      timezone: Etc/UTC

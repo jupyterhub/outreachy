@@ -37,7 +37,7 @@ You will need a Python installation and the [`nox` package](https://nox.thea.cod
    nox -s docs
    ```
 
-   You can open the `docs/_build/html/index.html` file in your local browser to
+   You can open the `docs/_build/dirhtml/index.html` file in your local browser to
    view the site.
 
 Alternatively, you can watch the `docs` folder for changes and have a copy of
