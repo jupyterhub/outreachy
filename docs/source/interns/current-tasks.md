@@ -40,6 +40,7 @@ data = pd.read_csv(
         "https://raw.githubusercontent.com/jupyterhub/outreachy/issue-data/microtask-table.csv"
     )
 )
+data.fillna(" ", inplace=True)
 
 # Function to display the table
 display(data.style.hide(axis="index"), target="microtask-table", append=False)

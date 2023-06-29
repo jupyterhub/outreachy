@@ -38,6 +38,7 @@ data = pd.read_csv(
         "https://raw.githubusercontent.com/jupyterhub/outreachy/issue-data/project-table.csv"
     )
 )
+data.fillna(" ", inplace=True)
 
 # Function to display the table
 display(data.style.hide(axis="index"), target="project-table", append=False)
