@@ -42,7 +42,7 @@ data = pd.read_csv(
 )
 
 # Function to display the table
-display(data.style.hide(axis="index"), target="project-table", append=False)
+display(data.style.hide(axis="index"), target="microtask-table", append=False)
 ```
 
 <div id="microtask-table" class="full-width microtask-table"></div>
