@@ -60,10 +60,10 @@ $(document).ready( function () {
 
 <style>
     table {
-        font-size: .7em;
+        font-size: 1em;
     }
 
     table th, table td {
-        padding: 0;
+        padding: 100;
     }
 </style>
