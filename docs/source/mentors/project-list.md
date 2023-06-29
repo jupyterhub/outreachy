@@ -33,7 +33,8 @@ from pyodide.http import open_url
 
 data = pd.read_csv(open_url("https://raw.githubusercontent.com/jupyterhub/outreachy/issue-data/project-table.csv"))
 
-display(data, target="project-table", append=False)
+# Function to display the table
+display(data.style.hide(axis="index"), target="project-table", append=False)
 ```
 
 <div id="project-table" class="full-width project-table"></div>
