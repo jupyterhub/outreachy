@@ -1,5 +1,3 @@
-(funding)=
-
 # Funding
 
 Outreachy internships are _paid_ internships and a requirement of participating

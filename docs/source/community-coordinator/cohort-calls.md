@@ -1,5 +1,3 @@
-(cohort-calls)=
-
 # Cohort Calls
 
 This section describes cohort calls, what they are, and how to run them. The
