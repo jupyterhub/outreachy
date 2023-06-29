@@ -27,8 +27,6 @@ jobs:
       issues: read
     steps:
       - uses: actions/checkout@v3
-        with:
-          ref: issue-data
       - uses: actions/setup-python@v4
         with:
           python-version: "3.10"
