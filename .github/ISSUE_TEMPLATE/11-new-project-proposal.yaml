@@ -13,6 +13,27 @@ body:
         Provide a short summary of the project idea
     validations:
       required: true
+  - type: textarea
+    attributes:
+      label: Stretch Goal
+      description: >-
+        Is there a potential stretch goal for this project?
+    validations:
+      required: false
+  - type: textarea
+    attributes:
+      label: Value to the Intern
+      description: >-
+        What will the intern learn about and gain from working on this project?
+    validations:
+      required: false
+  - type: textarea
+    attributes:
+      label: Motivation
+      description: >-
+        Why is it important that this work happens in JupyterHub? What value does it bring to the project?
+    validations:
+      required: false
   - type: dropdown
     attributes:
       label: Will you mentor this project yourself?
