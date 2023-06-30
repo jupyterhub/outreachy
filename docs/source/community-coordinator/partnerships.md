@@ -40,6 +40,7 @@ A Community Coordinator can organise this shared training by [contacting the
 OLS team](mailto:team@openlifesci.org).
 
 {attribution="Sarah Gibson, participated in mentor training both as an OLS mentor and Outreachy mentor"}
+
 > I really recommend participating in the mentor training if offered, even if
 > you are an experienced mentor. It's a great refresher for the required skills
 > and provides a safe space to practice before you have a real intern!
