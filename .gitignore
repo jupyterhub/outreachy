@@ -1,3 +1,6 @@
+# Ignore changes to the README to keep it indepedent from main
+README.md
+
 # docs folder
 docs/
 
