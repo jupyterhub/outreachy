@@ -3,6 +3,7 @@ A nox configuration file so that we can build the documentation easily with nox.
 - see the README.md for information about nox.
 - ref: https://nox.thea.codes
 """
+
 import nox
 
 nox.options.reuse_existing_virtualenvs = True
