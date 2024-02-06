@@ -108,9 +108,9 @@ def get_microtask_issues(
             {
                 "Title": f'<a href="{issue["html_url"]}">{issue["title"]}</a>',
                 "Project": project_label,
-                "Multiple applicants permitted?": "Yes"
-                if "multiple" in labels
-                else "No",
+                "Multiple applicants permitted?": (
+                    "Yes" if "multiple" in labels else "No"
+                ),
                 "Difficulty level": level_label,
             }
         )
