@@ -17,7 +17,7 @@ repos:
 
   # Autoformat: Python code, syntax patterns are modernized
   - repo: https://github.com/asottile/pyupgrade
-    rev: v3.16.0
+    rev: v3.20.0
     hooks:
       - id: pyupgrade
         args:
@@ -25,7 +25,7 @@ repos:
 
   # Autoformat: Python code
   - repo: https://github.com/pycqa/isort
-    rev: "5.13.2"
+    rev: "6.0.1"
     hooks:
       - id: isort
         args:
@@ -33,13 +33,13 @@ repos:
 
   # Autoformat: Python code
   - repo: https://github.com/psf/black
-    rev: "24.4.2"
+    rev: "25.1.0"
     hooks:
       - id: black
 
   # Lint: Python code
   - repo: https://github.com/pycqa/flake8
-    rev: "7.1.0"
+    rev: "7.3.0"
     hooks:
       - id: flake8
         args:
