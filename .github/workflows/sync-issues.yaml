@@ -34,7 +34,7 @@ jobs:
           ref: issue-data
           path: issue-data
           token: ${{ secrets.GITHUB_TOKEN }}
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.10"
       - working-directory: head/scripts
