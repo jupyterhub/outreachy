@@ -26,10 +26,10 @@ jobs:
       contents: write
       issues: read
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           path: head
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           ref: issue-data
           path: issue-data
